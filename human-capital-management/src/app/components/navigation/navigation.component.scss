@@ -1,0 +1,11 @@
+.nav-container {
+    display: flex;
+
+    mat-toolbar {
+        justify-content: space-between;
+    }
+
+    .nav-button {
+        margin-right: 10px;
+    }
+}
