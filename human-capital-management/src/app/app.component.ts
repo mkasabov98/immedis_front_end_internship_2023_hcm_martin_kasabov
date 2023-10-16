@@ -5,16 +5,23 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   constructor(private router: Router) {
 
   }
   title = 'human-capital-management';
-  loggedUser = false;
 
   ngOnInit() {
-    this.loggedUser
-      ? this.router.navigate(["app/home"])
-      : this.router.navigate(["login"])
+    // const loggedUser =JSON.parse(localStorage.getItem("loggedUser") || "") as string;
+    console.log(2);
+
+    const loggedUser = localStorage.getItem("loggedUser");
+    if (loggedUser) {
+      const loggedUserParsed = JSON.parse(loggedUser);
+      this.router.navigate(["app/home"]) 
+    } else {
+      this.router.navigate(["login"])
+    }
+
   }
 }
