@@ -1,27 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { StoreInterface } from './store/store.interface';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  constructor(private router: Router) {
-
+  // loggedUser$: {} | null;
+  constructor(private router: Router, private store: Store<StoreInterface>) {
+    // this.loggedUser$ = store.select("loggedUser")
   }
   title = 'human-capital-management';
 
   ngOnInit() {
-    // const loggedUser =JSON.parse(localStorage.getItem("loggedUser") || "") as string;
-    console.log(2);
+    this.store.select(state => state.loggedUser).subscribe(loggedUser => {
+      if (loggedUser) {
+        this.router.navigate(["app/home"]) 
+        console.log(loggedUser)
+      } else {
+        this.router.navigate(["login"])
+      }
+     
+    })
 
-    const loggedUser = localStorage.getItem("loggedUser");
-    if (loggedUser) {
-      const loggedUserParsed = JSON.parse(loggedUser);
-      this.router.navigate(["app/home"]) 
-    } else {
-      this.router.navigate(["login"])
-    }
 
   }
 }

@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { USERS } from 'src/app/data/users';
-import { userInterface } from 'src/app/interfaces/userInterface';
+import { userInterface } from 'src/app/interfaces/user.interface';
+import { login } from 'src/app/store/loginReducer/login.actions';
 
 @Component({
   selector: 'app-login-page',
@@ -10,7 +12,7 @@ import { userInterface } from 'src/app/interfaces/userInterface';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private store: Store) {}
   
   users: userInterface[] = USERS;
   
@@ -20,7 +22,7 @@ export class LoginPageComponent {
     const existingUser = USERS.find(user => user.email === emailInput && user.password === passInput);
     
     if (existingUser) {
-      localStorage.setItem("loggedUser", JSON.stringify(existingUser))
+      this.store.dispatch(login(existingUser))
       this.router.navigate(["app/home"])
     } else {
       alert("incorrect input")
