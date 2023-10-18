@@ -25,6 +25,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component'
 //reducers
 import { loginReducer } from './store/loginReducer/login.reducer';
+import { userCollectionReducer } from './store/userCollectionReducer/userCollection.reducer';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { loginReducer } from './store/loginReducer/login.reducer';
     MatFormFieldModule,
     MatCardModule,
     StoreModule.forRoot({
-      loggedUser: loginReducer
+      loggedUser: loginReducer,
+      userCollection: userCollectionReducer
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states

@@ -2,5 +2,21 @@ export interface userInterface {
     email: string,
     password: string,
     firstName: string,
-    lastName: string
+    lastName: string,
+    id: number,
+    phoneNumber: number,
+    birthDate: string,
+    startingDate: string,
+    sex: string,
+    nationality: string,
+    city: string,
+    country: string,
+    bankDetails: string,
+    salary: number,
+    salaryCurrency: string,
+    department: string,
+    managerID: number,
+    position: string,
+    manager: boolean,
+    paidLeaveDaysLeft: number
 }
