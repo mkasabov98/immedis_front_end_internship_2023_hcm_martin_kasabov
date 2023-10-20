@@ -13,19 +13,27 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import { MatRadioModule} from '@angular/material/radio';
+import { MatSelectModule} from "@angular/material/select"
 //components
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { LayoutComponentComponent } from './layout-component/layout-component.component';
+import { LayoutComponentComponent } from './components/layout-component/layout-component.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { SearchComponent } from './components/search/search.component';
 import { RequestLeaveComponent } from './components/request-leave/request-leave.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component'
+import { CreateUserFormComponent } from './components/create-user-form/create-user-form.component';
 //reducers
 import { loginReducer } from './store/loginReducer/login.reducer';
-import { userCollectionReducer } from './store/userCollectionReducer/userCollection.reducer';
+import { userCollectionReducer } from './store/userCollectionReducer/user-collection.reducer';
+import { countryDetailsReducer } from './store/countryDetailsReducer/country-details.reducer';
+//custom validators
+import { LettersOnlyDirective } from './customValidators/letters-only-validator.directive';
+import { YearValidatorDirective } from './customValidators/year-validator.directive';
+import { RecentDateValidatorDirective } from './customValidators/recent-date-validator.directive';
 
 @NgModule({
   declarations: [
@@ -37,7 +45,11 @@ import { userCollectionReducer } from './store/userCollectionReducer/userCollect
     SearchComponent,
     RequestLeaveComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    CreateUserFormComponent,
+    LettersOnlyDirective,
+    YearValidatorDirective,
+    RecentDateValidatorDirective,
   ],
   imports: [
     BrowserModule,
@@ -50,9 +62,12 @@ import { userCollectionReducer } from './store/userCollectionReducer/userCollect
     MatInputModule,
     MatFormFieldModule,
     MatCardModule,
+    MatRadioModule,
+    MatSelectModule,
     StoreModule.forRoot({
       loggedUser: loginReducer,
-      userCollection: userCollectionReducer
+      userCollection: userCollectionReducer,
+      countryDetails: countryDetailsReducer
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states

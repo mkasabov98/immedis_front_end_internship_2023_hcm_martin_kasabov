@@ -1,7 +1,7 @@
 export const USERS = [
   {
-    email: 'shawnagrant@assistia.com',
-    password: 'brown12345',
+    email: 'HR@123456',
+    password: 'HR@123456',
     firstName: 'Sherri',
     lastName: 'Robles',
     id: 0,
@@ -19,11 +19,12 @@ export const USERS = [
     managerID: 17,
     position: 'mid',
     manager: false,
-    paidLeaveDaysLeft: 5
+    paidLeaveDaysLeft: 5,
+    permission: 'HR'
   },
   {
-    email: 'sherrirobles@assistia.com',
-    password: 'blue12345',
+    email: 'ADMIN@123456',
+    password: 'ADMIN@123456',
     firstName: 'Elaine',
     lastName: 'Maddox',
     id: 1,
@@ -41,11 +42,12 @@ export const USERS = [
     managerID: 17,
     position: 'mid',
     manager: false,
-    paidLeaveDaysLeft: 5
+    paidLeaveDaysLeft: 5,
+    permission: 'ADMIN'
   },
   {
-    email: 'elainemaddox@assistia.com',
-    password: 'green12345',
+    email: 'employee@123',
+    password: 'employee@123',
     firstName: 'Gallegos',
     lastName: 'Browning',
     id: 2,
@@ -63,7 +65,8 @@ export const USERS = [
     managerID: 17,
     position: 'mid',
     manager: false,
-    paidLeaveDaysLeft: 5
+    paidLeaveDaysLeft: 5,
+    permission: 'employee'
   },
   {
     email: 'gallegosbrowning@assistia.com',
@@ -85,7 +88,8 @@ export const USERS = [
     managerID: 17,
     position: 'mid',
     manager: false,
-    paidLeaveDaysLeft: 5
+    paidLeaveDaysLeft: 5,
+    permission: 'employee'
   },
   {
     email: 'hatfieldhurley@assistia.com',
@@ -107,7 +111,8 @@ export const USERS = [
     managerID: 17,
     position: 'mid',
     manager: false,
-    paidLeaveDaysLeft: 5
+    paidLeaveDaysLeft: 5,
+    permission: 'employee'
   },
   {
     email: 'dominiquecastro@assistia.com',
@@ -129,7 +134,8 @@ export const USERS = [
     managerID: 17,
     position: 'mid',
     manager: false,
-    paidLeaveDaysLeft: 5
+    paidLeaveDaysLeft: 5,
+    permission: 'employee'
   },
   {
     email: 'wagnermorrow@assistia.com',
@@ -151,7 +157,8 @@ export const USERS = [
     managerID: 17,
     position: 'mid',
     manager: false,
-    paidLeaveDaysLeft: 5
+    paidLeaveDaysLeft: 5,
+    permission: 'employee'
   },
   {
     email: 'fieldscolon@assistia.com',
@@ -173,7 +180,8 @@ export const USERS = [
     managerID: 17,
     position: 'mid',
     manager: false,
-    paidLeaveDaysLeft: 5
+    paidLeaveDaysLeft: 5,
+    permission: 'employee'
   },
   {
     email: 'estesmarsh@assistia.com',
@@ -195,7 +203,8 @@ export const USERS = [
     managerID: 17,
     position: 'mid',
     manager: false,
-    paidLeaveDaysLeft: 5
+    paidLeaveDaysLeft: 5,
+    permission: 'employee'
   },
   {
     email: 'jillharvey@assistia.com',
@@ -217,7 +226,8 @@ export const USERS = [
     managerID: 17,
     position: 'mid',
     manager: false,
-    paidLeaveDaysLeft: 5
+    paidLeaveDaysLeft: 5,
+    permission: 'employee'
   },
   {
     email: 'garnerfrye@assistia.com',
@@ -239,7 +249,8 @@ export const USERS = [
     managerID: 17,
     position: 'mid',
     manager: false,
-    paidLeaveDaysLeft: 5
+    paidLeaveDaysLeft: 5,
+    permission: 'employee'
   },
   {
     email: 'hermananderson@assistia.com',
@@ -261,7 +272,8 @@ export const USERS = [
     managerID: 17,
     position: 'mid',
     manager: false,
-    paidLeaveDaysLeft: 5
+    paidLeaveDaysLeft: 5,
+    permission: 'employee'
   },
   {
     email: 'lindsayrandall@assistia.com',
@@ -283,7 +295,8 @@ export const USERS = [
     managerID: 17,
     position: 'mid',
     manager: false,
-    paidLeaveDaysLeft: 5
+    paidLeaveDaysLeft: 5,
+    permission: 'employee'
   },
   {
     email: 'luzmassey@assistia.com',
@@ -305,7 +318,8 @@ export const USERS = [
     managerID: 17,
     position: 'mid',
     manager: false,
-    paidLeaveDaysLeft: 5
+    paidLeaveDaysLeft: 5,
+    permission: 'employee'
   },
   {
     email: 'englishhorne@assistia.com',
@@ -327,7 +341,8 @@ export const USERS = [
     managerID: 17,
     position: 'mid',
     manager: false,
-    paidLeaveDaysLeft: 5
+    paidLeaveDaysLeft: 5,
+    permission: 'employee'
   }
 ]
 

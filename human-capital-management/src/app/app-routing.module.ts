@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 
-import { LayoutComponentComponent } from './layout-component/layout-component.component';
+import { LayoutComponentComponent } from './components/layout-component/layout-component.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { SearchComponent } from './components/search/search.component';
 import { RequestLeaveComponent } from './components/request-leave/request-leave.component';

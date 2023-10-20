@@ -18,5 +18,6 @@ export interface userInterface {
     managerID: number,
     position: string,
     manager: boolean,
-    paidLeaveDaysLeft: number
+    paidLeaveDaysLeft: number,
+    permission: string
 }

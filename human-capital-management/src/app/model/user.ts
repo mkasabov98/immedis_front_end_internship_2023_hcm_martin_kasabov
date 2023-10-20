@@ -19,6 +19,7 @@ export class User{
         public managerID: number,
         public position: string,
         public manager: boolean,
-        public paidLeaveDaysLeft: number
+        public paidLeaveDaysLeft: number,
+        public permission: string = "employee"
     ) {}
 }
