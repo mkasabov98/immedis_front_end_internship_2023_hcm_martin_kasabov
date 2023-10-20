@@ -14,6 +14,14 @@
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Password</mat-label>
+                    <input ngModel matInput placeholder="Password" type="text" name="password" required
+                        #password="ngModel" minlength="8" maxlength="16">
+                    <mat-error *ngIf="password.errors && (password.dirty || password.touched)">
+                        Password is mandatory and should be 8 to 16 characters.
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
                     <mat-label>First name</mat-label>
                     <input ngModel matInput lettersOnly placeholder="First Name" type="text" name="firstName" required
                         minlength="2" maxlength="24" #firstName="ngModel">
@@ -62,17 +70,74 @@
                         Starting date is required.
                     </mat-error>
                 </mat-form-field>
-                    <mat-radio-group ngModel name="sex" required>
+                <mat-radio-group ngModel name="sex" required>
                     <mat-label>Sex:</mat-label>
-                        <mat-radio-button value="male">Male</mat-radio-button>
-                        <mat-radio-button value="female">Female</mat-radio-button>
-                    </mat-radio-group>
-                    <mat-form-field>
-                        <mat-label>Country</mat-label>
-                        <mat-select ngModel name="country" required>
-                            <mat-option *ngFor="let country of countriesOptions" [value]="country">{{country}}</mat-option>
-                        </mat-select>
-                    </mat-form-field>
+                    <mat-radio-button value="male">Male</mat-radio-button>
+                    <mat-radio-button value="female">Female</mat-radio-button>
+                </mat-radio-group>
+                <mat-form-field>
+                    <mat-label>Residence</mat-label>
+                    <mat-select ngModel name="country" #country="ngModel" required>
+                        <mat-option *ngFor="let country of countriesOptions" [value]="country">{{country}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="country.hasError('required') && (country.touched || country.dirty)">Country of
+                        residence is mandatory</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Nationality</mat-label>
+                    <mat-select ngModel name="nationality" #nationality="ngModel" required>
+                        <mat-option *ngFor="let nationality of nationalitiesOptions"
+                            [value]="nationality">{{nationality}}</mat-option>
+                    </mat-select>
+                    <mat-error
+                        *ngIf="nationality.hasError('required') && (nationality.touched || nationality.dirty)">Nationality
+                        is mandatory</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Salary</mat-label>
+                    <input ngModel matInput placeholder="salary" type="number" name="salary" #salary="ngModel" required>
+                    <mat-error *ngIf="salary.hasError('required') && (salary.dirty || salary.touched)">Salary is
+                        mandatory</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Currency</mat-label>
+                    <mat-select ngModel name="currency" #currency="ngModel" required>
+                        <mat-option *ngFor="let currency of currenciesOptions"
+                            [value]="currency">{{currency}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="currency.hasError('required') && (currency.touched || currency.dirty)">Currency is
+                        mandatory</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Department</mat-label>
+                    <mat-select ngModel name="department" #department="ngModel" required>
+                        <mat-option *ngFor="let department of allDepartments" [value]="department">{{department}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="department.hasError('required') && (department.touched || department.dirty)">Department is mandatory</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Position</mat-label>
+                    <mat-select ngModel name="position" #position="ngModel" required>
+                        <mat-option *ngFor="let position of allPositions" [value]="position">{{position}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="position.hasError('required') && (position.touched || position.dirty)">Position is mandatory</mat-error>
+                </mat-form-field>
+                <mat-form-field *ngIf="position.value !=='manager'">
+                    <mat-label>Direct Manager</mat-label>
+                    <mat-select ngModel name="managerID" #managerID="ngModel" required>
+                        <mat-option *ngFor="let manager of allManagers" [value]="manager.id">{{manager.firstName + " " + manager.lastName}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="managerID.hasError('required') && (managerID.touched || managerID.dirty)">Setting a manager is mandatory</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Type of user</mat-label>
+                    <mat-select ngModel name="permission" #permission="ngModel" required>
+                        <mat-option [value]="'employee'">Employee</mat-option>
+                        <mat-option [value]="'HR'">HR</mat-option>
+                        <mat-option *ngIf="loggedUser?.permission === 'admin'" [value]="'admin'">Admin</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="position.hasError('required') && (position.touched || position.dirty)">Position is mandatory</mat-error>
+                </mat-form-field>
                 <button mat-raised-button type="submit" color="primary" [disabled]="createUserForm.invalid">Create a new
                     user</button>
             </form>

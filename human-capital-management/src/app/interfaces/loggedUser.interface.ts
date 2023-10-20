@@ -1,3 +1,5 @@
 export interface loggedUSerInterface  {
-    userID: number
+    id: number,
+    manager: boolean,
+    permission: string,
 }

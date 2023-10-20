@@ -30,6 +30,7 @@ import { CreateUserFormComponent } from './components/create-user-form/create-us
 import { loginReducer } from './store/loginReducer/login.reducer';
 import { userCollectionReducer } from './store/userCollectionReducer/user-collection.reducer';
 import { countryDetailsReducer } from './store/countryDetailsReducer/country-details.reducer';
+import { workforceDetailsReducer } from './store/workforceDetailsReducer/workforceDetails.reducer';
 //custom validators
 import { LettersOnlyDirective } from './customValidators/letters-only-validator.directive';
 import { YearValidatorDirective } from './customValidators/year-validator.directive';
@@ -67,7 +68,8 @@ import { RecentDateValidatorDirective } from './customValidators/recent-date-val
     StoreModule.forRoot({
       loggedUser: loginReducer,
       userCollection: userCollectionReducer,
-      countryDetails: countryDetailsReducer
+      countryDetails: countryDetailsReducer,
+      workforceDetails: workforceDetailsReducer
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
