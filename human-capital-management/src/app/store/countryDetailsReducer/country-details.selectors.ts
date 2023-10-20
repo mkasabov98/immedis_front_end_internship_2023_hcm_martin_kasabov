@@ -1,3 +1,5 @@
 import { StoreInterface } from "../store.interface";
 
-export const selectCountryDetails = (state: StoreInterface) => state.countryDetails;
+export const selectCountryDetails = (store: StoreInterface) => {
+    return store.countryDetails;
+}

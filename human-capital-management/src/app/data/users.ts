@@ -18,7 +18,7 @@ export const USERS = [
     department: 'IT',
     managerID: 17,
     position: 'mid',
-    manager: false,
+    manager: true,
     paidLeaveDaysLeft: 5,
     permission: 'HR'
   },
@@ -41,7 +41,7 @@ export const USERS = [
     department: 'IT',
     managerID: 17,
     position: 'mid',
-    manager: false,
+    manager: true,
     paidLeaveDaysLeft: 5,
     permission: 'ADMIN'
   },
@@ -64,7 +64,7 @@ export const USERS = [
     department: 'IT',
     managerID: 17,
     position: 'mid',
-    manager: false,
+    manager: true,
     paidLeaveDaysLeft: 5,
     permission: 'employee'
   },
@@ -87,7 +87,7 @@ export const USERS = [
     department: 'IT',
     managerID: 17,
     position: 'mid',
-    manager: false,
+    manager: true,
     paidLeaveDaysLeft: 5,
     permission: 'employee'
   },
@@ -227,7 +227,7 @@ export const USERS = [
     position: 'mid',
     manager: false,
     paidLeaveDaysLeft: 5,
-    permission: 'employee'
+    permission: 'admin'
   },
   {
     email: 'garnerfrye@assistia.com',
@@ -346,13 +346,13 @@ export const USERS = [
   }
 ]
 
-  let updatedUsers = USERS.map((obj, index) => {
-    return {
-      ...obj, id: index
-    }
-  })
+  // let updatedUsers = USERS.map((obj, index) => {
+  //   return {
+  //     ...obj, id: index
+  //   }
+  // })
 
-  console.log(updatedUsers);
+  // console.log(updatedUsers);
 
 
 //   type newObject = {
