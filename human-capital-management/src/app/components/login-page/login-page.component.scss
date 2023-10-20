@@ -1,9 +1,9 @@
-.container {
+.login-form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    left: 55%;
+    right: 55%;
     position: absolute;
     .login-container {
         background: transparent;
@@ -27,6 +27,8 @@
         mat-error {
             font-size: 14px;
             font-weight: 500;
+            display: flex;
+            justify-content: center;
         }
 
         mat-form-field {

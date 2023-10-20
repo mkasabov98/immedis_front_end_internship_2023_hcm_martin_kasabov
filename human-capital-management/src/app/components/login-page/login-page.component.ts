@@ -12,20 +12,26 @@ import { login } from 'src/app/store/loginReducer/login.actions';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent {
-  constructor(private router: Router, private store: Store) {}
-  
+  constructor(private router: Router, private store: Store) { }
+  incorrectInput = false;
+
   users: userInterface[] = USERS;
-  
+
+  resetIncorrectInput() {
+    this.incorrectInput = false;
+  }
+
   onSubmit(form: NgForm) {
     const emailInput = form.value.email;
     const passInput = form.value.password;
     const existingUser = USERS.find(user => user.email === emailInput && user.password === passInput);
-    
+
     if (existingUser) {
-      this.store.dispatch(login(existingUser))
-      this.router.navigate(["app/home"])
+      this.store.dispatch(login(existingUser));
+      this.router.navigate(["app/home"]);
+      this.incorrectInput = false;
     } else {
-      alert("incorrect input")
+      this.incorrectInput = true;
     }
   }
 }

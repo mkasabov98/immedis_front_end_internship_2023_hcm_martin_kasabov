@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { userInterface } from "src/app/interfaces/user.interface";
-import { addUser } from "./userCollection.actions";
+import { addUser } from "./user-collection.actions";
 import { USERS } from "src/app/data/users";
 
 const initialState: userInterface[] = USERS;

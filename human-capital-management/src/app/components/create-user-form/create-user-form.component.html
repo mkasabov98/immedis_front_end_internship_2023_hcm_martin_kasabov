@@ -1,0 +1,81 @@
+<div class="create-user-form-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Create a new user:</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form #createUserForm="ngForm" (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Email</mat-label>
+                    <input ngModel matInput placeholder="Email" type="email" name="email" required email
+                        #email="ngModel">
+                    <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
+                        Please enter a valid email address.
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>First name</mat-label>
+                    <input ngModel matInput lettersOnly placeholder="First Name" type="text" name="firstName" required
+                        minlength="2" maxlength="24" #firstName="ngModel">
+                    <mat-error *ngIf="firstName.errors && firstName.errors['lettersOnly']">
+                        Should have 2-24 characters and only letters
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Last name</mat-label>
+                    <input ngModel matInput lettersOnly placeholder="Last Name" type="text" name="lastName" required
+                        minlength="2" maxlength="24" #lastName="ngModel">
+                    <mat-error *ngIf="lastName.errors && lastName.errors['lettersOnly']">
+                        Should have 2-24 characters and only letters
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Phone number</mat-label>
+                    <input ngModel matInput placeholder="Phone number" type="number" name="phoneNumber" required
+                        minlength="10" maxlength="10" #phoneNumber="ngModel">
+                    <mat-error *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)">
+                        Should be 10 digits
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Birthday</mat-label>
+                    <input ngModel matInput yearValidator placeholder="Birthday mm/dd/yyyy" type="date" name="birthDate"
+                        required #birthDate="ngModel">
+                    <mat-error *ngIf="birthDate.hasError('yearExceeded')">
+                        Year cannot exceed year 2004.
+                    </mat-error>
+                    <mat-error *ngIf="birthDate.hasError('required')">
+                        Birthday is required.
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Starting date</mat-label>
+                    <input ngModel recentDateValidator matInput placeholder="Starting date mm/dd/yyyy" type="date"
+                        name="startingDate" required #startingDate="ngModel">
+                    <mat-error *ngIf="startingDate.hasError('dateTooOld')">
+                        The date should be up to one month ago from the current day.
+                    </mat-error>
+                    <mat-error *ngIf="startingDate.hasError('dateTooBig')">
+                        The date should be up to one month from the current day.
+                    </mat-error>
+                    <mat-error *ngIf="startingDate.hasError('required')">
+                        Starting date is required.
+                    </mat-error>
+                </mat-form-field>
+                    <mat-radio-group ngModel name="sex" required>
+                    <mat-label>Sex:</mat-label>
+                        <mat-radio-button value="male">Male</mat-radio-button>
+                        <mat-radio-button value="female">Female</mat-radio-button>
+                    </mat-radio-group>
+                    <mat-form-field>
+                        <mat-label>Country</mat-label>
+                        <mat-select ngModel name="country" required>
+                            <mat-option *ngFor="let country of countriesOptions" [value]="country">{{country}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                <button mat-raised-button type="submit" color="primary" [disabled]="createUserForm.invalid">Create a new
+                    user</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
