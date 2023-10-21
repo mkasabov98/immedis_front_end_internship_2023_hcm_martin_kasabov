@@ -124,10 +124,10 @@
                 </mat-form-field>
                 <mat-form-field *ngIf="position.value !=='manager'">
                     <mat-label>Direct Manager</mat-label>
-                    <mat-select ngModel name="managerID" #managerID="ngModel" required>
+                    <mat-select ngModel name="directManagerID" #directManagerID="ngModel" required>
                         <mat-option *ngFor="let manager of allManagers" [value]="manager.id">{{manager.firstName + " " + manager.lastName}}</mat-option>
                     </mat-select>
-                    <mat-error *ngIf="managerID.hasError('required') && (managerID.touched || managerID.dirty)">Setting a manager is mandatory</mat-error>
+                    <mat-error *ngIf="directManagerID.hasError('required') && (directManagerID.touched || directManagerID.dirty)">Setting a manager is mandatory</mat-error>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Type of user</mat-label>

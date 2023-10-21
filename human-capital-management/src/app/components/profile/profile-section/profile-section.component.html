@@ -1,0 +1,39 @@
+<mat-card class="profilePersonalInfoCard">
+    <mat-card-header>
+        <img mat-card-avatar [src]="loggedUserToShow.profilePhoto" alt="Profile photo">
+        <div>
+        <mat-card-title>Name: {{loggedUserToShow.firstName + " " + loggedUserToShow.lastName}}</mat-card-title>
+        <mat-card-title>Email: {{loggedUserToShow.email}}</mat-card-title>
+        <mat-card-title>Phone number: {{loggedUserToShow.phoneNumber}}</mat-card-title>
+        </div>
+    </mat-card-header>
+
+    <!-- <mat-card-content>
+        <strong><p>Nationality {{loggedUserToShow.nationality}}</p></strong>
+        <strong><p>Country: {{loggedUserToShow.country}}</p></strong>
+    </mat-card-content>
+    <mat-card-content>
+        <strong><p>Birthday: {{loggedUserToShow.birthDate}}</p></strong>
+        <strong><p>Starting date: {{loggedUserToShow.startingDate}}</p></strong>
+    </mat-card-content>
+    <mat-card-content>
+        <strong><p>Salary: {{loggedUserToShow.salary + " " + loggedUserToShow.salaryCurrency}}</p></strong>
+    </mat-card-content>
+    <mat-card-content>
+        <strong><p>Department: {{loggedUserToShow.department}}</p></strong>
+        <strong><p>Position: {{loggedUserToShow.position}}</p></strong>
+    </mat-card-content> -->
+    <div class="profilePersonalInfoCardContentSection">
+        <mat-card-content>
+            <strong><p>Nationality {{loggedUserToShow.nationality}}</p></strong>
+            <strong><p>Birthday: {{loggedUserToShow.birthDate}}</p></strong>
+            <strong><p>Position: {{loggedUserToShow.position}}</p></strong>
+            <strong><p>Salary: {{loggedUserToShow.salary + " " + loggedUserToShow.salaryCurrency}}</p></strong>
+        </mat-card-content>
+        <mat-card-content>
+            <strong><p>Country: {{loggedUserToShow.country}}</p></strong>
+            <strong><p>Starting date: {{loggedUserToShow.startingDate}}</p></strong>
+            <strong><p>Department: {{loggedUserToShow.department}}</p></strong>
+        </mat-card-content>
+    </div>
+</mat-card>

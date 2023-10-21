@@ -14,9 +14,10 @@ export interface userInterface {
     salary: number,
     salaryCurrency: string,
     department: string,
-    managerID: number,
+    directManagerID: number | null,
     position: string,
     manager: boolean,
     paidLeaveDaysLeft: number,
-    permission: string
+    permission: string,
+    profilePhoto: string
 }

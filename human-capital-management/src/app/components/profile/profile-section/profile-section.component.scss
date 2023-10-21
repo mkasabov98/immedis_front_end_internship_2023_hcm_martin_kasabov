@@ -1,0 +1,29 @@
+.profilePersonalInfoCard {
+    width: fit-content;
+    margin: 30px;
+    background: rgb(0,0,0, 0.3);
+    color: white;
+
+    img {
+        height: 150px;
+        width: 150px;
+    }
+
+    mat-card-header {
+       mat-card-title {
+        margin: 15px 0px 0px 10px;
+       }
+    }
+
+    .profilePersonalInfoCardContentSection {
+        display: flex;
+        justify-content: space-evenly;
+
+        mat-card-content {
+            display: flex;
+            flex-direction: column;
+            padding: 0px;
+            margin: 10px;
+        }
+    }
+}

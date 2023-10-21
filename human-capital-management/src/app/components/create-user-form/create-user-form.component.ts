@@ -9,6 +9,8 @@ import { selectAllDepartments, selectAllPositions } from 'src/app/store/workforc
 import { selectAllManagers } from 'src/app/store/userCollectionReducer/user-collection.selectors';
 import { loggedUSerInterface } from 'src/app/interfaces/loggedUser.interface';
 import { selectLoggedUser } from 'src/app/store/loginReducer/login.selectors';
+import { User } from 'src/app/model/user';
+import { addUser } from 'src/app/store/userCollectionReducer/user-collection.actions';
 
 @Component({
   selector: 'app-create-user-form',
@@ -20,7 +22,7 @@ export class CreateUserFormComponent implements OnInit {
   countryDetails$: Observable<countryDetailsInterface> = new Observable();
   allPositions$: Observable<string[]> = new Observable();
   allDepartments$: Observable<string[]> = new Observable();
-  allManagers$: Observable<{id:number, firstName: string, lastName: string}[]> = new Observable();
+  allManagers$: Observable<{ id: number, firstName: string, lastName: string }[]> = new Observable();
   loggedUser$: Observable<loggedUSerInterface | null> = new Observable();
 
   countriesOptions: string[] = [];
@@ -28,8 +30,8 @@ export class CreateUserFormComponent implements OnInit {
   currenciesOptions: string[] = [];
   allPositions: string[] = [];
   allDepartments: string[] = [];
-  allManagers: {id:number, firstName: string, lastName: string}[] =[];
-  loggedUser!: loggedUSerInterface| null;
+  allManagers: { id: number, firstName: string, lastName: string }[] = [];
+  loggedUser!: loggedUSerInterface | null;
 
   private destroy$ = new Subject<void>();
 
@@ -61,7 +63,6 @@ export class CreateUserFormComponent implements OnInit {
     this.allManagers$ = this.store.select(selectAllManagers);
     this.allManagers$.pipe(takeUntil(this.destroy$)).subscribe(data => {
       this.allManagers = data;
-      console.log(data)
     })
   }
 
@@ -71,6 +72,19 @@ export class CreateUserFormComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    const { email, password, firstName, lastName, phoneNumber, birthDate, startingDate,
+      sex, nationality, country, salary, currency, department, position, permission } = form.value;
+    let directManagerID: number | null;
+    let manager: boolean;
+
+    form.value.directManagerID !== undefined ? directManagerID
+      = form.value.directManagerID : directManagerID = null;
+    position === "manager" ? manager = true : manager = false;
+
+    const newUser = new User(email, password, firstName, lastName,
+      phoneNumber, birthDate, startingDate, sex, nationality, country,
+      salary, currency, department, directManagerID, position, manager, permission);
+
+    this.store.dispatch(addUser(newUser));
   }
 }
