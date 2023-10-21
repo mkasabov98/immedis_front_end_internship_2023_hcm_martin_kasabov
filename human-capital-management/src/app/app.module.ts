@@ -14,7 +14,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule} from '@angular/material/radio';
-import { MatSelectModule} from "@angular/material/select"
+import { MatSelectModule} from "@angular/material/select";
+
 //components
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
@@ -26,6 +27,7 @@ import { RequestLeaveComponent } from './components/request-leave/request-leave.
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component'
 import { CreateUserFormComponent } from './components/create-user-form/create-user-form.component';
+import { ProfileSectionComponent } from './components/profile/profile-section/profile-section.component';
 //reducers
 import { loginReducer } from './store/loginReducer/login.reducer';
 import { userCollectionReducer } from './store/userCollectionReducer/user-collection.reducer';
@@ -51,6 +53,7 @@ import { RecentDateValidatorDirective } from './customValidators/recent-date-val
     LettersOnlyDirective,
     YearValidatorDirective,
     RecentDateValidatorDirective,
+    ProfileSectionComponent,
   ],
   imports: [
     BrowserModule,

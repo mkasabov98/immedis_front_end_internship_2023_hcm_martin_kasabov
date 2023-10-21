@@ -5,3 +5,11 @@ export const selectAllManagers = (store: StoreInterface) => {
     .map(({id, firstName, lastName}) => ({id, firstName, lastName}));
     return managers;
 }
+
+export const selectNumberOfUsers = (store: StoreInterface) => {
+    return store.userCollection.length;
+}
+
+export const selectUserCollection = (store: StoreInterface) => {
+    return store.userCollection
+}
