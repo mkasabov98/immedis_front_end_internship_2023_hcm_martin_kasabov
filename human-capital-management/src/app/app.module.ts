@@ -37,6 +37,7 @@ import { workforceDetailsReducer } from './store/workforceDetailsReducer/workfor
 import { LettersOnlyDirective } from './customValidators/letters-only-validator.directive';
 import { YearValidatorDirective } from './customValidators/year-validator.directive';
 import { RecentDateValidatorDirective } from './customValidators/recent-date-validator.directive';
+import { PasswordValidatorDirective } from './customValidators/password-validator.directive';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { RecentDateValidatorDirective } from './customValidators/recent-date-val
     YearValidatorDirective,
     RecentDateValidatorDirective,
     ProfileSectionComponent,
+    PasswordValidatorDirective,
   ],
   imports: [
     BrowserModule,
