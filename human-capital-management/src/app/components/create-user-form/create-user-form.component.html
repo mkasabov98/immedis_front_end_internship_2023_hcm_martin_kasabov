@@ -4,7 +4,7 @@
             <mat-card-title>Create a new user:</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <form #createUserForm="ngForm" (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <form #createUserForm="ngForm" (ngSubmit)="onSubmit(createUserForm)">
                 <mat-form-field appearance="fill" class="full-width">
                     <mat-label>Email</mat-label>
                     <input ngModel matInput placeholder="Email" type="email" name="email" required email

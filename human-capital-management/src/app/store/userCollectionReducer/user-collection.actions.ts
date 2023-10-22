@@ -6,3 +6,8 @@ export const addUser = createAction(
     "[Add User] AddUser",
     props<userInterface>()
 )
+
+export const changePassword = createAction(
+    "[Change Password]",
+    props<{userID:number, newPassword:string}>()
+)

@@ -7,22 +7,6 @@
         <mat-card-title>Phone number: {{loggedUserToShow.phoneNumber}}</mat-card-title>
         </div>
     </mat-card-header>
-
-    <!-- <mat-card-content>
-        <strong><p>Nationality {{loggedUserToShow.nationality}}</p></strong>
-        <strong><p>Country: {{loggedUserToShow.country}}</p></strong>
-    </mat-card-content>
-    <mat-card-content>
-        <strong><p>Birthday: {{loggedUserToShow.birthDate}}</p></strong>
-        <strong><p>Starting date: {{loggedUserToShow.startingDate}}</p></strong>
-    </mat-card-content>
-    <mat-card-content>
-        <strong><p>Salary: {{loggedUserToShow.salary + " " + loggedUserToShow.salaryCurrency}}</p></strong>
-    </mat-card-content>
-    <mat-card-content>
-        <strong><p>Department: {{loggedUserToShow.department}}</p></strong>
-        <strong><p>Position: {{loggedUserToShow.position}}</p></strong>
-    </mat-card-content> -->
     <div class="profilePersonalInfoCardContentSection">
         <mat-card-content>
             <strong><p>Nationality {{loggedUserToShow.nationality}}</p></strong>
@@ -34,6 +18,32 @@
             <strong><p>Country: {{loggedUserToShow.country}}</p></strong>
             <strong><p>Starting date: {{loggedUserToShow.startingDate}}</p></strong>
             <strong><p>Department: {{loggedUserToShow.department}}</p></strong>
+        </mat-card-content>
+    </div>
+    <div>
+        <button mat-raised-button color="primary" (click)="onChangePassword()">{{showChangePasswordSectionFlag ? "Close window" : "Change Password"}}</button>
+        <button mat-raised-button color="primary">Change Details</button>
+    </div>
+    <div *ngIf="showChangePasswordSectionFlag">
+        <mat-card-content>
+            <form #changePasswordForm="ngForm" (ngSubmit)="onPasswordChangeFormSUbmit(changePasswordForm)">
+                <mat-form-field appearance="fill">
+                    <mat-label>Current Password</mat-label>
+                    <input ngModel matInput name="currentPassword" type="password" placeholder="Current Password" required #currentPassword="ngModel">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>new Password</mat-label>
+                    <input appPasswordValidator ngModel matInput name="newPassword" type="password" placeholder="New Password" required #newPassword="ngModel">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Repeat New Password</mat-label>
+                    <input appPasswordValidator ngModel matInput name="RepeatedNewPassword" type="password" placeholder="Repeat New Password" required #RepeatedNewPassword="ngModel">
+                </mat-form-field>
+                <button mat-raised-button type="submit" color="primary" [disabled]="changePasswordForm.invalid">Change Password</button>
+                <mat-error *ngIf="newPassword.hasError('passwordInvalid') && newPassword.touched">Password is not valid, password should be 8-16 chars and should have at least one capital, one non-capital, one number and one special symbol</mat-error>
+                <mat-error *ngIf="wrongCurrentPasswordFlag">Current password is not correct</mat-error>
+                <mat-error *ngIf="wrongNewPasswordFlag">New passwords do not match</mat-error>
+            </form>
         </mat-card-content>
     </div>
 </mat-card>
