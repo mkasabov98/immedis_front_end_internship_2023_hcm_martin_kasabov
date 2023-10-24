@@ -7,7 +7,7 @@ import { userInterface } from 'src/app/interfaces/user.interface';
 import { login } from 'src/app/store/loginReducer/login.actions';
 import { Observable, Subject, take, takeUntil } from 'rxjs';
 import { selectUserCollection } from 'src/app/store/userCollectionReducer/user-collection.selectors';
-import { StoreInterface } from 'src/app/store/store.interface';
+import { StoreInterface } from 'src/app/interfaces/store.interface';
 
 @Component({
   selector: 'app-login-page',

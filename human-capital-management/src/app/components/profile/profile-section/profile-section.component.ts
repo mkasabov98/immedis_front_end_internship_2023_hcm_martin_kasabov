@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { loggedUSerInterface } from 'src/app/interfaces/loggedUser.interface';
-import { StoreInterface } from 'src/app/store/store.interface';
+import { StoreInterface } from 'src/app/interfaces/store.interface';
 import { Observable, Subject, takeUntil } from "rxjs"
 import { selectLoggedUser } from 'src/app/store/loginReducer/login.selectors';
 import { userInterface } from 'src/app/interfaces/user.interface';
