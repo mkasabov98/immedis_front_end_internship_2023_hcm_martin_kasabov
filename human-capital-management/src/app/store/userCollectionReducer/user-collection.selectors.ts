@@ -1,4 +1,4 @@
-import { StoreInterface } from "../store.interface";
+import { StoreInterface } from "../../interfaces/store.interface";
 
 export const selectAllManagers = (store: StoreInterface) => {
     const managers = store.userCollection.filter(user => user.manager)

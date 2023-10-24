@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, Subject, takeUntil } from 'rxjs';
-import { StoreInterface } from './store/store.interface';
+import { StoreInterface } from './interfaces/store.interface';
 import { selectLoggedUser } from './store/loginReducer/login.selectors';
 @Component({
   selector: 'app-root',

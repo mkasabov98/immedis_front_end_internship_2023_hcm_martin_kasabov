@@ -38,6 +38,7 @@ import { LettersOnlyDirective } from './customValidators/letters-only-validator.
 import { YearValidatorDirective } from './customValidators/year-validator.directive';
 import { RecentDateValidatorDirective } from './customValidators/recent-date-validator.directive';
 import { PasswordValidatorDirective } from './customValidators/password-validator.directive';
+import { AddCompanyDetailsFormComponent } from './components/add-company-details-form/add-company-details-form.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { PasswordValidatorDirective } from './customValidators/password-validato
     RecentDateValidatorDirective,
     ProfileSectionComponent,
     PasswordValidatorDirective,
+    AddCompanyDetailsFormComponent,
   ],
   imports: [
     BrowserModule,

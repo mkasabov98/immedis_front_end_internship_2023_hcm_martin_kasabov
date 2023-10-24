@@ -1,4 +1,4 @@
-import { StoreInterface } from "../store.interface";
+import { StoreInterface } from "../../interfaces/store.interface";
 
 export const selectAllDepartments = (store: StoreInterface) => {
     return store.workforceDetails.departments;
