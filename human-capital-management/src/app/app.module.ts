@@ -26,8 +26,9 @@ import { SearchComponent } from './components/search/search.component';
 import { RequestLeaveComponent } from './components/request-leave/request-leave.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component'
-import { CreateUserFormComponent } from './components/create-user-form/create-user-form.component';
+import { CreateUserFormComponent } from './components/create-user-page/create-user-form/create-user-form.component';
 import { ProfileSectionComponent } from './components/profile/profile-section/profile-section.component';
+import { CreateUserPageComponent } from './components/create-user-page/create-user-page.component';
 //reducers
 import { loginReducer } from './store/loginReducer/login.reducer';
 import { userCollectionReducer } from './store/userCollectionReducer/user-collection.reducer';
@@ -38,7 +39,8 @@ import { LettersOnlyDirective } from './customValidators/letters-only-validator.
 import { YearValidatorDirective } from './customValidators/year-validator.directive';
 import { RecentDateValidatorDirective } from './customValidators/recent-date-validator.directive';
 import { PasswordValidatorDirective } from './customValidators/password-validator.directive';
-import { AddCompanyDetailsFormComponent } from './components/add-company-details-form/add-company-details-form.component';
+import { AddCompanyDetailsFormComponent } from './components/create-user-page/add-company-details-form/add-company-details-form.component';
+import { UserDetailsCardComponent } from './components/user-details-card/user-details-card.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,8 @@ import { AddCompanyDetailsFormComponent } from './components/add-company-details
     ProfileSectionComponent,
     PasswordValidatorDirective,
     AddCompanyDetailsFormComponent,
+    CreateUserPageComponent,
+    UserDetailsCardComponent,
   ],
   imports: [
     BrowserModule,

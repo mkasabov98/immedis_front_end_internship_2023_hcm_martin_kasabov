@@ -8,6 +8,7 @@ import { SearchComponent } from './components/search/search.component';
 import { RequestLeaveComponent } from './components/request-leave/request-leave.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component'
+import { CreateUserPageComponent } from './components/create-user-page/create-user-page.component';
 
 const routes: Routes = [
   { path: "login", component: LoginPageComponent },
@@ -17,7 +18,7 @@ const routes: Routes = [
         children: [
           { path: "home", component: HomePageComponent },
           { path: "search", component: SearchComponent },
-          { path: "leave", component: RequestLeaveComponent },
+          { path: "addUser", component: CreateUserPageComponent },
           { path: "dashboard", component: DashboardComponent },
           { path: "profile", component: ProfileComponent },
         ]

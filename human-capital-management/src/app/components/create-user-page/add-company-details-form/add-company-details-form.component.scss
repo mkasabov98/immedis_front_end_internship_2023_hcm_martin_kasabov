@@ -1,0 +1,26 @@
+.add-company-details-form-container {
+    mat-card {
+        background: rgb(0, 0, 0, 0.3);
+    }
+
+    mat-card-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+
+        mat-card-title {
+            font-size: 24px;
+        }
+    }
+
+    .form-wrapper {
+        margin: 14px 0px;
+    }
+
+    form {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

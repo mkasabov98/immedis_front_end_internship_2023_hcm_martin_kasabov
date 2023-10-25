@@ -1,0 +1,14 @@
+.create-user-page {
+    display: flex;
+    flex-direction: row;
+    
+    app-create-user-form{
+        margin: 30px;
+        width: 70%;
+    }
+
+    app-add-company-details-form{
+        margin: 30px;
+        width: 30%;
+    }
+}

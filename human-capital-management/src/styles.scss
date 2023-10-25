@@ -5,9 +5,9 @@ html, body { height: 100%; }
 body { 
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-image: url("/assets/background.jpg");
+    background-image: url("/assets/background5.png");
     background-repeat: no-repeat;
-    background-size: cover; /* This will cover the entire viewport */
-    background-attachment: fixed; /* This will fix the image position while scrolling */
+    background-size: cover;
+    background-attachment: fixed;
     z-index: -1;
 }
