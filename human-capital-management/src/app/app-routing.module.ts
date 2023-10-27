@@ -9,6 +9,7 @@ import { RequestLeaveComponent } from './components/request-leave/request-leave.
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component'
 import { CreateUserPageComponent } from './components/create-user-page/create-user-page.component';
+import { DisplayUserPageComponent } from './components/display-user-page/display-user-page.component';
 
 const routes: Routes = [
   { path: "login", component: LoginPageComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
           { path: "addUser", component: CreateUserPageComponent },
           { path: "dashboard", component: DashboardComponent },
           { path: "profile", component: ProfileComponent },
+          { path: "user/:id", component: DisplayUserPageComponent}
         ]
       }
 ];

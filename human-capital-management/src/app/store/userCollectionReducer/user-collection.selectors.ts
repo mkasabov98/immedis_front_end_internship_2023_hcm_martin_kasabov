@@ -49,3 +49,19 @@ export const selectLoggedUserDepartment = (store: StoreInterface, loggedUserId: 
     });
     return loggedUserDepartmentCollection;
 }
+
+export const selectSpecificUser = (store: StoreInterface, userId: number) => {
+    const userCollection = store.userCollection;
+    const neededUser = userCollection.find(user => user.id === userId);
+    return neededUser;
+}
+
+export const selectSpecificUserName = (store: StoreInterface, userId: number) => {
+    const userCollection = store.userCollection;
+    const neededUser = userCollection.find(user => user.id === userId);
+    if (neededUser !== undefined) {
+        return `${neededUser?.firstName} ${neededUser?.lastName}`;
+    } else {
+        return null;
+    }
+}

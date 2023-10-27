@@ -1,0 +1,39 @@
+<div class="display-user-page-outer-container">
+    <mat-card class="display-user-page-container">
+        <div class="user-info-outer-container">
+            <mat-card-content>
+                <img mat-card-avatar [src]="user?.profilePhoto" alt="">
+            </mat-card-content>
+            <mat-card-content>
+                <div class="user-info-container">
+                    <mat-card-title>{{user?.firstName + " " + user?.lastName}}</mat-card-title>
+                </div>
+                <div class="user-info-container">
+                    <div class="user-info-inner-container">
+                        <p><strong>Email:</strong> {{user?.email}}</p>
+                        <p><strong>Position:</strong> {{user?.position}}</p>
+                        <p *ngIf="userDirectManager"><strong>Direct Manager:</strong> {{userDirectManager}}</p>
+                        <p><strong>Residence:</strong> {{user?.country}}</p>
+                        <p><strong>Birthday:</strong> {{user?.birthDate}}</p>
+                        <p><strong>User Id:</strong> {{user?.id}}</p>
+                        <p><strong>Salary:</strong> {{user?.salary}} {{user?.salaryCurrency}}</p>
+                    </div>
+                    <div class="user-info-inner-container">
+                        <p><strong>Phone Number:</strong> {{user?.phoneNumber}}</p>
+                        <p><strong>Department:</strong> {{user?.department}}</p>
+                        <p *ngIf="userDirectManager"><strong>Direct Manager Id:</strong> {{user?.directManagerID}}</p>
+                        <p><strong>Nationality:</strong> {{user?.nationality}}</p>
+                        <p><strong>Starting Date:</strong> {{user?.startingDate}}</p>
+                        <p><strong>Sex:</strong> {{user?.sex}}</p>
+                        <p><strong>Leave Days Left:</strong> {{user?.paidLeaveDaysLeft}}</p>
+                    </div>
+                </div>
+            </mat-card-content>
+        </div>
+        <div class="display-user-button-container">
+            <mat-card-content>
+                <button mat-raised-button color="primary" (click)="openDialog()">Make Changes</button>
+            </mat-card-content>
+        </div>
+    </mat-card>
+</div>
