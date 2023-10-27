@@ -29,6 +29,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     this.loggedUser$ = this.store.select(selectLoggedUser);
     this.loggedUser$.pipe(takeUntil(this.destroy$)).subscribe(data => {
       this.loggedUser = data;
+      console.log(this.loggedUser)
     })
     this.loggedUserTeam$ = this.store.select(state => selectLoggedUserTeam(state, this.loggedUser?.id!));
     this.loggedUserTeam$.pipe(takeUntil(this.destroy$)).subscribe(data => {

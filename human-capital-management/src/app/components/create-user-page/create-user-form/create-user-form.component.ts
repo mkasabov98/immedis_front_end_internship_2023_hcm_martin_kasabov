@@ -85,6 +85,7 @@ export class CreateUserFormComponent implements OnInit {
       phoneNumber, birthDate, startingDate, sex, nationality, country,
       salary, currency, department, directManagerID, position, manager, permission);
 
+    console.log(newUser)
     this.store.dispatch(addUser(newUser));
   }
 }

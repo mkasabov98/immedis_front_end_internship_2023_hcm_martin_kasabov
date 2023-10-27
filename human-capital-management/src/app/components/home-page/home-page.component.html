@@ -1,4 +1,19 @@
-<div>
-    <app-user-details-card *ngFor="let user of loggedUserTeam" [user]="user"></app-user-details-card>
+<div class="home-page-container">
+    <div class="user-cards-container">
+        <div class="user-cards-middle-container">
+            <p>YOUR TEAM</p>
+            <div class="user-cards-inner-container">
+                    <app-user-details-card *ngFor="let user of loggedUserTeam" [user]="user"></app-user-details-card>
+            </div>
+        </div>
+    </div>
+    <div class="user-cards-container">
+        <div class="user-cards-middle-container">
+            <p>YOUR DEPARTMENT</p>
+            <div class="user-cards-inner-container">
+                <app-user-details-card *ngFor="let user of loggedUserDepartmentCollection"
+                    [user]="user"></app-user-details-card>
+            </div>
+        </div>
+    </div>
 </div>
-<app-user-details-card *ngFor="let user of loggedUserDepartmentCollection" [user]="user"></app-user-details-card>
