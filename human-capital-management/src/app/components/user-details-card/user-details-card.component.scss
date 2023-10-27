@@ -1,0 +1,53 @@
+.user-representing-card {
+    width: 250px;
+    margin: 20px;
+
+    mat-card-header {
+        display: flex;
+        flex-direction: column;
+
+        mat-card-title-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            div {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    .img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            object-fit: cover;
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+        }
+    }
+
+    .content-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        p {
+            overflow-wrap: break-word;
+            max-width: 220px;
+            margin: 0px;
+        }
+
+        mat-icon {
+            margin-right: 2px;
+        }
+    }
+    
+}

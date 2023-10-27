@@ -1,4 +1,33 @@
-div {
+.home-page-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
+    .user-cards-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+        flex-wrap: wrap;
+
+        .user-cards-middle-container {
+            background: rgba(0, 0, 0, 0.3);
+            margin: 10px 30px;
+
+            P {
+                justify-content: center;
+                display: flex;
+                font-size: 24px;
+                color: white;
+                margin-top: 20px;
+            }
+
+            .user-cards-inner-container {
+                display: flex;
+                flex-direction: row;
+                width: fit-content;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    }
 }
