@@ -5,6 +5,7 @@ import { Observable, Subject, takeUntil } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { StoreInterface } from 'src/app/interfaces/store.interface';
 import { selectLoggedUser } from 'src/app/store/loginReducer/login.selectors';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-details-card',
@@ -15,7 +16,7 @@ export class UserDetailsCardComponent implements OnInit {
   @Input() user!: userInterface;
   private destroy$ = new Subject<void>();
 
-  constructor(private store: Store<StoreInterface>){}
+  constructor(private store: Store<StoreInterface>, private router: Router){}
 
   loggedUser$: Observable<loggedUSerInterface | null> = new Observable();
   loggedUser!: loggedUSerInterface | null;
@@ -31,6 +32,7 @@ export class UserDetailsCardComponent implements OnInit {
     console.log("click")
     console.log(this.loggedUser)
     console.log(this.user.id)
+    this.router.navigate([`app/user/${this.user.id}`])
   }
 
 }

@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule} from '@angular/material/radio';
 import { MatSelectModule} from "@angular/material/select";
+import { MatDialogModule } from "@angular/material/dialog"
 
 //components
 import { AppComponent } from './app.component';
@@ -29,6 +30,9 @@ import { ProfileComponent } from './components/profile/profile.component'
 import { CreateUserFormComponent } from './components/create-user-page/create-user-form/create-user-form.component';
 import { ProfileSectionComponent } from './components/profile/profile-section/profile-section.component';
 import { CreateUserPageComponent } from './components/create-user-page/create-user-page.component';
+import { AddCompanyDetailsFormComponent } from './components/create-user-page/add-company-details-form/add-company-details-form.component';
+import { UserDetailsCardComponent } from './components/user-details-card/user-details-card.component';
+import { DisplayUserPageComponent } from './components/display-user-page/display-user-page.component';
 //reducers
 import { loginReducer } from './store/loginReducer/login.reducer';
 import { userCollectionReducer } from './store/userCollectionReducer/user-collection.reducer';
@@ -39,8 +43,7 @@ import { LettersOnlyDirective } from './customValidators/letters-only-validator.
 import { YearValidatorDirective } from './customValidators/year-validator.directive';
 import { RecentDateValidatorDirective } from './customValidators/recent-date-validator.directive';
 import { PasswordValidatorDirective } from './customValidators/password-validator.directive';
-import { AddCompanyDetailsFormComponent } from './components/create-user-page/add-company-details-form/add-company-details-form.component';
-import { UserDetailsCardComponent } from './components/user-details-card/user-details-card.component';
+import { UpdateUserInfoDialogComponent } from './components/display-user-page/update-user-info-dialog/update-user-info-dialog.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +65,8 @@ import { UserDetailsCardComponent } from './components/user-details-card/user-de
     AddCompanyDetailsFormComponent,
     CreateUserPageComponent,
     UserDetailsCardComponent,
+    DisplayUserPageComponent,
+    UpdateUserInfoDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +81,7 @@ import { UserDetailsCardComponent } from './components/user-details-card/user-de
     MatCardModule,
     MatRadioModule,
     MatSelectModule,
+    MatDialogModule,
     StoreModule.forRoot({
       loggedUser: loginReducer,
       userCollection: userCollectionReducer,

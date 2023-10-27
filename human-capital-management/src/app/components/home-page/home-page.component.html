@@ -1,5 +1,5 @@
 <div class="home-page-container">
-    <div class="user-cards-container">
+    <div *ngIf="loggedUserTeam.length" class="user-cards-container">
         <div class="user-cards-middle-container">
             <p>YOUR TEAM</p>
             <div class="user-cards-inner-container">
@@ -7,7 +7,7 @@
             </div>
         </div>
     </div>
-    <div class="user-cards-container">
+    <div *ngIf="loggedUserDepartmentCollection.length" class="user-cards-container">
         <div class="user-cards-middle-container">
             <p>YOUR DEPARTMENT</p>
             <div class="user-cards-inner-container">
