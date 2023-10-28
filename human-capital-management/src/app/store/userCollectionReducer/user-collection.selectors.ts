@@ -65,3 +65,29 @@ export const selectSpecificUserName = (store: StoreInterface, userId: number) =>
         return null;
     }
 }
+
+export const selectUserByExistingEmail = (store: StoreInterface, userEmail: string, userId: number) => {
+    const user = store.userCollection.find(user => user.email === userEmail)
+
+    if (user && user.id !== userId) {
+        return true;
+    } else {
+        return false;
+    }
+
+    //if true is returned => there is a user with the passed email
+    //if false is returned => there is no user with the passed email
+}
+
+export const selectUserByExistingNumber = (store: StoreInterface, userPhoneNumber: number, userId: number) => {
+    const user = store.userCollection.find(user => user.phoneNumber === userPhoneNumber)
+
+    if (user && user.id !== userId) {
+        return true;
+    } else {
+        return false;
+    }
+
+    //if true is returned => there is a user with the passed number
+    //if false is returned => there is no user with the passed number
+}

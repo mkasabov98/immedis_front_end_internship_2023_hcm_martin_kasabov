@@ -7,6 +7,7 @@ import { selectAllDepartments, selectAllPositions } from 'src/app/store/workforc
 import { NgForm } from '@angular/forms';
 import { addCountry, addCurrency, addNationality } from 'src/app/store/countryDetailsReducer/country-details.actions';
 import { addDepartment, addPosition } from 'src/app/store/workforceDetailsReducer/workforceDetails.actions';
+import { CustomMaterialSnackbarComponent } from 'src/app/services/custom-material-snackbar/custom-material-snackbar';
 
 @Component({
   selector: 'app-add-company-details-form',
@@ -30,7 +31,10 @@ export class AddCompanyDetailsFormComponent implements OnInit, OnDestroy {
 
   private destroy$ = new Subject<void>();
 
-  constructor(private store: Store<StoreInterface>) { }
+  constructor(
+    private store: Store<StoreInterface>,
+    private snackBar: CustomMaterialSnackbarComponent
+    ) { }
 
   ngOnInit(): void {
     this.allCountries$ = this.store.select(selectAllCountries);
@@ -78,7 +82,7 @@ export class AddCompanyDetailsFormComponent implements OnInit, OnDestroy {
     } else {
       this.store.dispatch(addCountry({ newCountry: countryInput }));
       form.resetForm();
-      alert(`${countryInput} has been added to the countries, now you can use ${countryInput} in the form for creating a new user`);
+      this.snackBar.openSnackBar(`${countryInput} has been added to the countries, now you can use ${countryInput} in the form for creating a new user`);
     }
   }
 
@@ -91,7 +95,7 @@ export class AddCompanyDetailsFormComponent implements OnInit, OnDestroy {
     } else {
       this.store.dispatch(addNationality({ newNationality: nationalityInput }));
       form.resetForm();
-      alert(`${nationalityInput} has been added to the nationalities, now you can use ${nationalityInput} in the form for creating a new user`);
+      this.snackBar.openSnackBar(`${nationalityInput} has been added to the nationalities, now you can use ${nationalityInput} in the form for creating a new user`);
     }
   }
 
@@ -104,7 +108,7 @@ export class AddCompanyDetailsFormComponent implements OnInit, OnDestroy {
     } else {
       this.store.dispatch(addCurrency({ newCurrency: currencyInput }));
       form.resetForm();
-      alert(`${currencyInput} has been added to the nationalities, now you can use ${currencyInput} in the form for creating a new user`);
+      this.snackBar.openSnackBar(`${currencyInput} has been added to the nationalities, now you can use ${currencyInput} in the form for creating a new user`);
     }
   }
 
@@ -117,7 +121,7 @@ export class AddCompanyDetailsFormComponent implements OnInit, OnDestroy {
     } else {
       this.store.dispatch(addDepartment({ newDepartment: departmentInput }));
       form.resetForm();
-      alert(`${departmentInput} has been added to the nationalities, now you can use ${departmentInput} in the form for creating a new user`);
+      this.snackBar.openSnackBar(`${departmentInput} has been added to the nationalities, now you can use ${departmentInput} in the form for creating a new user`);
     }
   }
   onAddPositionFormSubmit(form: NgForm) {
@@ -129,7 +133,7 @@ export class AddCompanyDetailsFormComponent implements OnInit, OnDestroy {
     } else {
       this.store.dispatch(addPosition({ newPosition: positionInput }));
       form.resetForm();
-      alert(`${positionInput} has been added to the nationalities, now you can use ${positionInput} in the form for creating a new user`);
+      this.snackBar.openSnackBar(`${positionInput} has been added to the nationalities, now you can use ${positionInput} in the form for creating a new user`);
     }
   }
 }

@@ -7,6 +7,9 @@ import { StoreInterface } from 'src/app/interfaces/store.interface';
 import { userInterface } from 'src/app/interfaces/user.interface';
 import { selectSpecificUser, selectSpecificUserName } from 'src/app/store/userCollectionReducer/user-collection.selectors';
 import { UpdateUserInfoDialogComponent } from './update-user-info-dialog/update-user-info-dialog.component';
+import { loggedUSerInterface } from 'src/app/interfaces/loggedUser.interface';
+import { selectLoggedUser } from 'src/app/store/loginReducer/login.selectors';
+import { ResetUserPasswordDialogComponent } from './reset-user-password-dialog/reset-user-password-dialog.component';
 
 @Component({
   selector: 'app-display-user-page',
@@ -23,8 +26,11 @@ export class DisplayUserPageComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
 
   userToShowId!: string | null;
+
+  loggedUser$: Observable<loggedUSerInterface | null> = new Observable();
   user$: Observable<userInterface | undefined> = new Observable();
   userDirectManager$: Observable<string | null> = new Observable();
+  loggedUser!: loggedUSerInterface | null;
   user!: userInterface | undefined;
   userDirectManager!: string | null;
 
@@ -33,13 +39,17 @@ export class DisplayUserPageComponent implements OnInit, OnDestroy {
     this.user$ = this.store.select(store => selectSpecificUser(store, Number(this.userToShowId)));
     this.user$.pipe(takeUntil(this.destroy$)).subscribe(data => {
       this.user = data;
-      console.log(this.user)
+      // console.log(this.user)
+    })
+    this.loggedUser$ = this.store.select(selectLoggedUser);
+    this.loggedUser$.pipe(takeUntil(this.destroy$)).subscribe(data => {
+      this.loggedUser = data;
     })
     if (this.user) {
       this.userDirectManager$ = this.store.select(store => selectSpecificUserName(store, this.user?.directManagerID!))
       this.userDirectManager$.pipe(takeUntil(this.destroy$)).subscribe(data => {
         this.userDirectManager = data;
-        console.log(this.userDirectManager)
+        // console.log(this.userDirectManager)
       })
     }
   }
@@ -49,11 +59,17 @@ export class DisplayUserPageComponent implements OnInit, OnDestroy {
     this.destroy$.complete()
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(UpdateUserInfoDialogComponent, {
-      width: '250px',
-      height: '400px',
-      data: this.user
+  openUserInfoDialog() {
+    this.dialog.open(UpdateUserInfoDialogComponent, {
+      data: this.user,
+      // width: 'fit-content',
+      // height: 'fit-content',
+    })
+  }
+
+  openResetPasswordDialog() {
+    this.dialog.open(ResetUserPasswordDialogComponent, {
+      data: this.user?.id
     })
   }
 }

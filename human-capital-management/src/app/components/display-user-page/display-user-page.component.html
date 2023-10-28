@@ -32,7 +32,10 @@
         </div>
         <div class="display-user-button-container">
             <mat-card-content>
-                <button mat-raised-button color="primary" (click)="openDialog()">Make Changes</button>
+                <div class="display-user-button-inner-container">
+                    <button mat-raised-button color="primary" (click)="openUserInfoDialog()">Make Changes</button>
+                    <button mat-raised-button color="primary" (click)="openResetPasswordDialog()" *ngIf="loggedUser?.permission === 'admin'">Reset Password</button>
+                </div>
             </mat-card-content>
         </div>
     </mat-card>
