@@ -1,1 +1,80 @@
-<p>update-user-info-dialog works!</p>
+<div class="update-user-info-dialog-form">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Update Information</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form #updateInfoForm="ngForm" (ngSubmit)="onSubmitForm(updateInfoForm)">
+                <div class="update-user-info-form-row">
+                    <mat-form-field>
+                        <mat-label>Department</mat-label>
+                        <mat-select [(ngModel)]="userToUpdate.department" name="department">
+                            <mat-option *ngFor="let department of departments"
+                                [value]="department">{{department}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Position</mat-label>
+                        <mat-select [(ngModel)]="userToUpdate.position" name="position">
+                            <mat-option *ngFor="let position of positions" [value]="position">{{position}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field *ngIf="userToUpdate.position !== 'manager'">
+                        <mat-label>Manager</mat-label>
+                        <mat-select [(ngModel)]="userToUpdate.directManagerID" name="directManagerID" required>
+                            <ng-container *ngFor="let manager of managersCollection">
+                                <mat-option *ngIf="userToUpdate.id !== manager.id" [value]="manager.id">
+                                    {{manager.firstName + " " + manager.lastName}}</mat-option>
+                            </ng-container>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="update-user-info-form-row">
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Email</mat-label>
+                        <input [(ngModel)]="userToUpdate.email" matInput placeholder="Email" name="email" type="email"
+                            required email #email="ngModel" (ngModelChange)="emailFlag = false">
+                        <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
+                            Please enter a valid email address.
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Phone Number</mat-label>
+                        <input [(ngModel)]="userToUpdate.phoneNumber" matInput placeholder="Phone Number"
+                            name="phoneNumber" required #phoneNumber="ngModel" minlength="10" maxlength="10" type="text"
+                            pattern="[0-9]{10}" (ngModelChange)="phoneNumberFlag = false">
+                        <mat-error *ngIf="phoneNumber.errors?.['required']">
+                            Phone number is required.
+                        </mat-error>
+                        <mat-error
+                            *ngIf="phoneNumber.errors?.['minlength'] || phoneNumber.errors?.['maxlength'] || phoneNumber.errors?.['pattern']">
+                            Should be a 10-digit number.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="update-user-info-form-row">
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Salary</mat-label>
+                        <input [(ngModel)]="userToUpdate.salary" matInput placeholder="salary" type="number"
+                            name="salary" #salary="ngModel" required>
+                        <mat-error *ngIf="salary.hasError('required') && (salary.dirty || salary.touched)">Salary is
+                            mandatory</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Currency</mat-label>
+                        <mat-select [(ngModel)]="userToUpdate.salaryCurrency" name="currency">
+                            <mat-option *ngFor="let currency of currencies" [value]="currency">{{currency}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="update-user-info-form-row">
+                    <button mat-raised-button color="primary" [disabled]="updateInfoForm.invalid">Save Changes</button>
+                </div>
+                <div class="error-container">
+                    <mat-error *ngIf="emailFlag">There is another user with that email</mat-error>
+                    <mat-error *ngIf="phoneNumberFlag">There is another user with that phone Number</mat-error>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

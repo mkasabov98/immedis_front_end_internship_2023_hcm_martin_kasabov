@@ -53,8 +53,10 @@
 
         .display-user-button-container {
             mat-card-content {
-                justify-content: center;
-                display: flex;
+                .display-user-button-inner-container {
+                    justify-content: space-evenly;
+                    display: flex;
+                }
             }
         }
 

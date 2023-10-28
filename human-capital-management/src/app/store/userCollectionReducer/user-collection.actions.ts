@@ -26,3 +26,8 @@ export const changeProfilePhoto = createAction(
     "[Change Profile Photo] ChangeProfilePhoto",
     props<{userID:number, newProfilePhoto: string }>()
 )
+
+export const updateUserInformation = createAction(
+    "[Update User Information] UpdateUserInformation",
+    props<{userToUpdate:userInterface}>()
+)

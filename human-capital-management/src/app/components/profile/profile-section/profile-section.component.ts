@@ -8,6 +8,7 @@ import { userInterface } from 'src/app/interfaces/user.interface';
 import { selectUserCollection } from 'src/app/store/userCollectionReducer/user-collection.selectors';
 import { NgForm } from '@angular/forms';
 import { changeEmail, changePassword, changeProfilePhoto, chnagePhoneNumber } from 'src/app/store/userCollectionReducer/user-collection.actions';
+import { CustomMaterialSnackbarComponent } from 'src/app/services/custom-material-snackbar/custom-material-snackbar';
 @Component({
   selector: 'app-profile-section',
   templateUrl: './profile-section.component.html',
@@ -32,7 +33,9 @@ export class ProfileSectionComponent implements OnInit, OnDestroy {
   loggedUserToShow!: userInterface;
   private destroy$ = new Subject<void>();
 
-  constructor(private store: Store<StoreInterface>) { }
+  constructor(
+    private store: Store<StoreInterface>,
+    private snackbar: CustomMaterialSnackbarComponent) { }
 
   ngOnInit(): void {
     this.loggedUser$ = this.store.select(selectLoggedUser);
@@ -45,7 +48,7 @@ export class ProfileSectionComponent implements OnInit, OnDestroy {
       this.loggedUserToShow = this.userCollection.find(user => user.id === this.loggedUser?.id) as userInterface;
       this.emailInputValue = this.loggedUserToShow.email;
       this.phoneNumberInputValue = this.loggedUserToShow.phoneNumber;
-      console.log(this.loggedUserToShow)
+      // console.log(this.loggedUserToShow)
     })
 
   }
@@ -57,7 +60,7 @@ export class ProfileSectionComponent implements OnInit, OnDestroy {
 
   onChangePassword() {
     this.showChangePasswordSectionFlag = !this.showChangePasswordSectionFlag;
-    console.log(this.showChangePasswordSectionFlag)
+    // console.log(this.showChangePasswordSectionFlag)
   }
 
   onPasswordChangeFormSubmit(form: NgForm) {
@@ -74,7 +77,7 @@ export class ProfileSectionComponent implements OnInit, OnDestroy {
     }
     if (currentPassword === loggedUserPassword && newPassword === RepeatedNewPassword) {
       this.store.dispatch(changePassword({ userID: this.loggedUser!.id, newPassword: newPassword }));
-      alert("password has been changed");
+      this.snackbar.openSnackBar("password has been changed");
       form.resetForm();
       this.showChangePasswordSectionFlag = false;
     }
@@ -85,7 +88,7 @@ export class ProfileSectionComponent implements OnInit, OnDestroy {
   }
 
   onChangeEmailFormSubmit(form: NgForm) {
-    console.log(this.emailInputValue)
+    // console.log(this.emailInputValue)
     this.store.dispatch(changeEmail({ userID: this.loggedUser!.id, newEmail: this.emailInputValue }))
     this.emailEditFlag = false;
   }
@@ -95,9 +98,9 @@ export class ProfileSectionComponent implements OnInit, OnDestroy {
   }
 
   onChangePhoneNumberFormSubmit(form: NgForm) {
-    console.log(this.phoneNumberInputValue)
-    console.log(form)
-    this.store.dispatch(chnagePhoneNumber({ userID: this.loggedUser!.id, newPhoneNumber: this.phoneNumberInputValue }));
+    // console.log(typeof(this.phoneNumberInputValue))
+    // console.log(form)
+    this.store.dispatch(chnagePhoneNumber({ userID: this.loggedUser!.id, newPhoneNumber: Number(this.phoneNumberInputValue) }));
     this.phoneNumberEditFlag = false;
   }
 
@@ -114,7 +117,7 @@ export class ProfileSectionComponent implements OnInit, OnDestroy {
 
       reader.readAsDataURL(file);
     } else {
-      alert('Please upload a valid image.');
+      this.snackbar.openSnackBar('Please upload a valid image.');
     }
   }
 

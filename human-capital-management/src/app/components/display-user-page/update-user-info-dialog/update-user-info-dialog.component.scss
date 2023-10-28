@@ -1,0 +1,56 @@
+.update-user-info-dialog-form {
+    mat-card {
+        padding: 20px;
+
+        mat-card-header {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+            padding: 0px;
+
+            mat-card-title {
+                font-size: 24px;
+            }
+
+        }
+
+        mat-card-content {
+            padding: 16px;
+            .update-user-info-form-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-content: center;
+
+                mat-form-field {
+                    margin: 0px 10px;
+                }
+            }
+        }
+
+        mat-error {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: 500;
+
+        }
+
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        button {
+            margin-top: 16px;
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

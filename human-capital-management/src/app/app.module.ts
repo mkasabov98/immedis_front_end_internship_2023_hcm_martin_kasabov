@@ -15,7 +15,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule} from '@angular/material/radio';
 import { MatSelectModule} from "@angular/material/select";
-import { MatDialogModule } from "@angular/material/dialog"
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatSnackBarModule} from "@angular/material/snack-bar"
 
 //components
 import { AppComponent } from './app.component';
@@ -44,6 +45,7 @@ import { YearValidatorDirective } from './customValidators/year-validator.direct
 import { RecentDateValidatorDirective } from './customValidators/recent-date-validator.directive';
 import { PasswordValidatorDirective } from './customValidators/password-validator.directive';
 import { UpdateUserInfoDialogComponent } from './components/display-user-page/update-user-info-dialog/update-user-info-dialog.component';
+import { ResetUserPasswordDialogComponent } from './components/display-user-page/reset-user-password-dialog/reset-user-password-dialog.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,7 @@ import { UpdateUserInfoDialogComponent } from './components/display-user-page/up
     UserDetailsCardComponent,
     DisplayUserPageComponent,
     UpdateUserInfoDialogComponent,
+    ResetUserPasswordDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,6 +85,7 @@ import { UpdateUserInfoDialogComponent } from './components/display-user-page/up
     MatRadioModule,
     MatSelectModule,
     MatDialogModule,
+    MatSnackBarModule,
     StoreModule.forRoot({
       loggedUser: loginReducer,
       userCollection: userCollectionReducer,

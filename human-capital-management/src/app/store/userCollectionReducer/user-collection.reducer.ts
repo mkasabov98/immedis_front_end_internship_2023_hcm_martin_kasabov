@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { userInterface } from "src/app/interfaces/user.interface";
-import { addUser, changeEmail, changePassword, changeProfilePhoto, chnagePhoneNumber } from "./user-collection.actions";
+import { addUser, changeEmail, changePassword, changeProfilePhoto, chnagePhoneNumber, updateUserInformation } from "./user-collection.actions";
 import { USERS } from "src/app/data/users";
 
 const initialState: userInterface[] = USERS;
@@ -36,7 +36,7 @@ export const userCollectionReducer = createReducer(
         }
         return state;
     }),
-    on(chnagePhoneNumber, (state, {userID, newPhoneNumber}) => {
+    on(chnagePhoneNumber, (state, { userID, newPhoneNumber }) => {
         const userToUpdateIndex = state.findIndex(user => user.id === userID);
 
         if (userToUpdateIndex !== -1) {
@@ -49,7 +49,7 @@ export const userCollectionReducer = createReducer(
         }
         return state;
     }),
-    on(changeProfilePhoto, (state, {userID, newProfilePhoto}) => {
+    on(changeProfilePhoto, (state, { userID, newProfilePhoto }) => {
         const userToUpdateIndex = state.findIndex(user => user.id === userID);
 
         if (userToUpdateIndex !== -1) {
@@ -61,5 +61,17 @@ export const userCollectionReducer = createReducer(
             ];
         }
         return state;
+    }),
+    on(updateUserInformation, (state, { userToUpdate }) => {
+        const userToUpdateIndex = state.findIndex(user => user.id === userToUpdate.id);
+
+        if (userToUpdateIndex !== -1) {
+            return [
+                ...state.slice(0, userToUpdateIndex),
+                userToUpdate,
+                ...state.slice(userToUpdateIndex + 1)
+            ]
+        }
+        return state
     })
 )
