@@ -16,8 +16,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from "@angular/material/select";
 import { MatDialogModule } from "@angular/material/dialog";
-import { MatSnackBarModule } from "@angular/material/snack-bar"
-import { MatTableModule } from "@angular/material/table"
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatTableModule } from "@angular/material/table";
+import { MatPaginatorModule} from "@angular/material/paginator";
+import { MatSortModule } from '@angular/material/sort';
 
 //components
 import { AppComponent } from './app.component';
@@ -35,6 +37,9 @@ import { CreateUserPageComponent } from './components/create-user-page/create-us
 import { AddCompanyDetailsFormComponent } from './components/create-user-page/add-company-details-form/add-company-details-form.component';
 import { UserDetailsCardComponent } from './components/user-details-card/user-details-card.component';
 import { DisplayUserPageComponent } from './components/display-user-page/display-user-page.component';
+import { UserCollectionTableComponent } from './components/search/user-collection-table/user-collection-table.component';
+import { UpdateUserInfoDialogComponent } from './components/display-user-page/update-user-info-dialog/update-user-info-dialog.component';
+import { ResetUserPasswordDialogComponent } from './components/display-user-page/reset-user-password-dialog/reset-user-password-dialog.component';
 //reducers
 import { loginReducer } from './store/loginReducer/login.reducer';
 import { userCollectionReducer } from './store/userCollectionReducer/user-collection.reducer';
@@ -45,9 +50,7 @@ import { LettersOnlyDirective } from './customValidators/letters-only-validator.
 import { YearValidatorDirective } from './customValidators/year-validator.directive';
 import { RecentDateValidatorDirective } from './customValidators/recent-date-validator.directive';
 import { PasswordValidatorDirective } from './customValidators/password-validator.directive';
-import { UpdateUserInfoDialogComponent } from './components/display-user-page/update-user-info-dialog/update-user-info-dialog.component';
-import { ResetUserPasswordDialogComponent } from './components/display-user-page/reset-user-password-dialog/reset-user-password-dialog.component';
-import { UserCollectionTableComponent } from './components/search/user-collection-table/user-collection-table.component';
+import { DeleteUserDialogComponent } from './components/display-user-page/delete-user-dialog/delete-user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +76,7 @@ import { UserCollectionTableComponent } from './components/search/user-collectio
     UpdateUserInfoDialogComponent,
     ResetUserPasswordDialogComponent,
     UserCollectionTableComponent,
+    DeleteUserDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,6 +94,8 @@ import { UserCollectionTableComponent } from './components/search/user-collectio
     MatDialogModule,
     MatSnackBarModule,
     MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     StoreModule.forRoot({
       loggedUser: loginReducer,
       userCollection: userCollectionReducer,

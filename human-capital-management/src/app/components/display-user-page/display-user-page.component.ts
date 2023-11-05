@@ -10,6 +10,7 @@ import { UpdateUserInfoDialogComponent } from './update-user-info-dialog/update-
 import { loggedUSerInterface } from 'src/app/interfaces/loggedUser.interface';
 import { selectLoggedUser } from 'src/app/store/loginReducer/login.selectors';
 import { ResetUserPasswordDialogComponent } from './reset-user-password-dialog/reset-user-password-dialog.component';
+import { DeleteUserDialogComponent } from './delete-user-dialog/delete-user-dialog.component';
 
 @Component({
   selector: 'app-display-user-page',
@@ -62,13 +63,17 @@ export class DisplayUserPageComponent implements OnInit, OnDestroy {
   openUserInfoDialog() {
     this.dialog.open(UpdateUserInfoDialogComponent, {
       data: this.user,
-      // width: 'fit-content',
-      // height: 'fit-content',
     })
   }
 
   openResetPasswordDialog() {
     this.dialog.open(ResetUserPasswordDialogComponent, {
+      data: this.user?.id
+    })
+  }
+
+  openDeleteUserDialog() {
+    this.dialog.open(DeleteUserDialogComponent, {
       data: this.user?.id
     })
   }
