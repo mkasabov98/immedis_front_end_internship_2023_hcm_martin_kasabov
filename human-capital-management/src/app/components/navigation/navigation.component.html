@@ -1,16 +1,16 @@
 <p class="nav-container">
     <mat-toolbar color="primary">
         <div>
-            <button mat-icon-button class="nav-button" routerLink="/app/home">
+            <button mat-icon-button class="nav-button" routerLink="/app/home" *ngIf="loggedUser?.permission !== 'admin'">
                 <mat-icon>home</mat-icon>
             </button>
-            <button mat-icon-button class="nav-button" routerLink="/app/search">
+            <button mat-icon-button class="nav-button" routerLink="/app/search" *ngIf="loggedUser?.permission !== 'employee'">
                 <mat-icon>search</mat-icon>
             </button>
-            <button mat-icon-button class="nav-button" routerLink="/app/addUser">
+            <button mat-icon-button class="nav-button" routerLink="/app/addUser" *ngIf="loggedUser?.permission !== 'employee'">
                 <mat-icon>group_add</mat-icon>
             </button>
-            <button mat-icon-button class="nav-button" routerLink="/app/dashboard">
+            <button mat-icon-button class="nav-button" routerLink="/app/dashboard" *ngIf="loggedUser?.permission !== 'employee'">
                 <mat-icon>dashboard</mat-icon>
             </button>
         </div>

@@ -18,9 +18,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.store.select(selectLoggedUser).pipe(takeUntil(this.destroy$))
       .subscribe(loggedUser => {
-        if (loggedUser) {
-          this.router.navigate(["app/home"]);
-        } else {
+        if (!loggedUser) {
           this.router.navigate(["login"]);
         }
       })

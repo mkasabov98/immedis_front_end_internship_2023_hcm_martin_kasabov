@@ -1,7 +1,7 @@
 export const USERS = [
   {
-    email: 'HR@123456',
-    password: 'HR@123456',
+    email: 'Admin@123456',
+    password: 'Admin@123456',
     firstName: 'Sherri',
     lastName: 'Robles',
     id: 0,
@@ -10,22 +10,20 @@ export const USERS = [
     startingDate: '2023-10-18',
     sex: 'male',
     nationality: 'bulgarian',
-    city: 'Varna',
     country: 'Bulgaria',
-    bankDetails: 'sjdkna128721mnsa',
     salary: 2000,
     salaryCurrency: 'lev',
-    department: 'HR',
-    directManagerID: 3,
+    department: 'null',
+    directManagerID: null,
     position: 'mid',
     manager: false,
     paidLeaveDaysLeft: 5,
-    permission: 'employee',
-    profilePhoto : "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/35af6a41332353.57a1ce913e889.jpg"
+    permission: 'admin',
+    profilePhoto: "https://api.writco.in/assets/images/user/1040200713102106134.webp"
   },
   {
-    email: 'ADMIN@123456',
-    password: 'ADMIN@123456',
+    email: 'HRmanager@123456',
+    password: 'HRmanager@123456',
     firstName: 'Elaine',
     lastName: 'Maddox',
     id: 1,
@@ -34,22 +32,20 @@ export const USERS = [
     startingDate: '2023-10-18',
     sex: 'male',
     nationality: 'bulgarian',
-    city: 'Varna',
     country: 'Bulgaria',
-    bankDetails: 'sjdkna128721mnsa',
     salary: 2000,
     salaryCurrency: 'lev',
     department: 'HR',
-    directManagerID: 23423,
-    position: 'mid',
+    directManagerID: null,
+    position: 'manager',
     manager: true,
     paidLeaveDaysLeft: 5,
-    permission: 'admin',
-    profilePhoto : "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww"
+    permission: 'HR',
+    profilePhoto: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/35af6a41332353.57a1ce913e889.jpg"
   },
   {
-    email: 'employee@123',
-    password: 'employee@123',
+    email: 'employeeM1@123',
+    password: 'employeeM1@123',
     firstName: 'Gallegos',
     lastName: 'Browning',
     id: 2,
@@ -58,22 +54,20 @@ export const USERS = [
     startingDate: '2023-10-18',
     sex: 'male',
     nationality: 'bulgarian',
-    city: 'Varna',
     country: 'Bulgaria',
-    bankDetails: 'sjdkna128721mnsa',
     salary: 2000,
     salaryCurrency: 'lev',
-    department: 'HR',
-    directManagerID: 3,
-    position: 'mid',
+    department: 'IT',
+    directManagerID: null,
+    position: 'manager',
     manager: true,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto : "https://www.kcrw.com/news/shows/press-play-with-madeleine-brand/tech-job-cuts-scientology-trials-ev-random-novel/@@images/rectangular_image/page-header?v=1668558373.12"
+    profilePhoto: "https://www.kcrw.com/news/shows/press-play-with-madeleine-brand/tech-job-cuts-scientology-trials-ev-random-novel/@@images/rectangular_image/page-header?v=1668558373.12"
   },
   {
-    email: 'gallegosbrowning@assistia.com',
-    password: 'blue12345',
+    email: 'employeeM2@123',
+    password: 'employeeM2@123',
     firstName: 'Hatfield',
     lastName: 'Hurley',
     id: 3,
@@ -82,18 +76,16 @@ export const USERS = [
     startingDate: '2023-10-18',
     sex: 'male',
     nationality: 'bulgarian',
-    city: 'Varna',
     country: 'Bulgaria',
-    bankDetails: 'sjdkna128721mnsa',
     salary: 2000,
     salaryCurrency: 'lev',
-    department: 'HR',
-    directManagerID: 234241,
-    position: 'mid',
+    department: 'Accounting',
+    directManagerID: null,
+    position: 'manager',
     manager: true,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto : "https://i0.wp.com/thatrandomagency.com/wp-content/uploads/2020/05/0.jpg?resize=500%2C500&ssl=1"
+    profilePhoto: "https://i0.wp.com/thatrandomagency.com/wp-content/uploads/2020/05/0.jpg?resize=500%2C500&ssl=1"
   },
   {
     email: 'hatfieldhurley@assistia.com',
@@ -106,18 +98,16 @@ export const USERS = [
     startingDate: '2023-10-18',
     sex: 'male',
     nationality: 'bulgarian',
-    city: 'Varna',
     country: 'Bulgaria',
-    bankDetails: 'sjdkna128721mnsa',
     salary: 2000,
     salaryCurrency: 'euro',
-    department: 'Accounting',
-    directManagerID: 234256456,
+    department: 'HR',
+    directManagerID: 1,
     position: 'mid',
     manager: false,
     paidLeaveDaysLeft: 5,
-    permission: 'employee',
-    profilePhoto : "https://live.staticflickr.com/5252/5403292396_0804de9bcf_b.jpg"
+    permission: 'HR',
+    profilePhoto: "https://live.staticflickr.com/5252/5403292396_0804de9bcf_b.jpg"
   },
   {
     email: 'dominiquecastro@assistia.com',
@@ -130,18 +120,16 @@ export const USERS = [
     startingDate: '2023-10-18',
     sex: 'male',
     nationality: 'bulgarian',
-    city: 'Varna',
     country: 'Bulgaria',
-    bankDetails: 'sjdkna128721mnsa',
     salary: 2000,
     salaryCurrency: 'euro',
-    department: 'Accounting',
-    directManagerID: 2342564,
-    position: 'mid',
+    department: 'HR',
+    directManagerID: 1,
+    position: 'junior',
     manager: false,
     paidLeaveDaysLeft: 5,
-    permission: 'employee',
-    profilePhoto : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwTE8WaJYfoLdKPUoVFvhOWtAKmDepJaQtQw&usqp=CAU"
+    permission: 'HR',
+    profilePhoto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwTE8WaJYfoLdKPUoVFvhOWtAKmDepJaQtQw&usqp=CAU"
   },
   {
     email: 'wagnermorrow@assistia.com',
@@ -154,18 +142,16 @@ export const USERS = [
     startingDate: '2023-10-18',
     sex: 'male',
     nationality: 'bulgarian',
-    city: 'Varna',
     country: 'Bulgaria',
-    bankDetails: 'sjdkna128721mnsa',
     salary: 2000,
     salaryCurrency: 'euro',
-    department: 'Accounting',
-    directManagerID: 2564,
+    department: 'HR',
+    directManagerID: 1,
     position: 'mid',
     manager: false,
     paidLeaveDaysLeft: 5,
-    permission: 'employee',
-    profilePhoto : "https://i.pinimg.com/736x/ee/e6/51/eee651694ba2b3112ffb3eb4525547e9.jpg"
+    permission: 'HR',
+    profilePhoto: "https://i.pinimg.com/736x/ee/e6/51/eee651694ba2b3112ffb3eb4525547e9.jpg"
   },
   {
     email: 'fieldscolon@assistia.com',
@@ -178,18 +164,16 @@ export const USERS = [
     startingDate: '2023-10-18',
     sex: 'male',
     nationality: 'bulgarian',
-    city: 'Varna',
     country: 'Bulgaria',
-    bankDetails: 'sjdkna128721mnsa',
     salary: 2000,
     salaryCurrency: 'euro',
-    department: 'Accounting',
-    directManagerID: 25645,
+    department: 'IT',
+    directManagerID: 2,
     position: 'mid',
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto : "https://i.pinimg.com/736x/4c/44/8f/4c448f7441520af626319813cdea3d22.jpg"
+    profilePhoto: "https://i.pinimg.com/736x/4c/44/8f/4c448f7441520af626319813cdea3d22.jpg"
   },
   {
     email: 'estesmarsh@assistia.com',
@@ -202,22 +186,20 @@ export const USERS = [
     startingDate: '2023-10-18',
     sex: 'male',
     nationality: 'bulgarian',
-    city: 'Varna',
     country: 'Bulgaria',
-    bankDetails: 'sjdkna128721mnsa',
     salary: 2000,
     salaryCurrency: 'euro',
     department: 'Accounting',
-    directManagerID: 3,
-    position: 'mid',
+    directManagerID: 2,
+    position: 'junior',
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto : "https://i.pinimg.com/736x/39/da/66/39da6656f187dcc802a7affb0e649539.jpg"
+    profilePhoto: "https://i.pinimg.com/736x/39/da/66/39da6656f187dcc802a7affb0e649539.jpg"
   },
   {
-    email: 'jillharvey@assistia.com',
-    password: 'brown12345',
+    email: 'employee@abv.com',
+    password: 'employee@abv.com',
     firstName: 'Garner',
     lastName: 'Frye',
     id: 9,
@@ -226,18 +208,16 @@ export const USERS = [
     startingDate: '2023-10-18',
     sex: 'male',
     nationality: 'bulgarian',
-    city: 'Varna',
     country: 'Bulgaria',
-    bankDetails: 'sjdkna128721mnsa',
     salary: 2000,
     salaryCurrency: 'british pound',
-    department: 'HR',
-    directManagerID: 256451554,
+    department: 'IT',
+    directManagerID: 2,
     position: 'mid',
     manager: false,
     paidLeaveDaysLeft: 5,
-    permission: 'admin',
-    profilePhoto : "https://img.freepik.com/premium-photo/natural-real-person-portrait-closeup-woman-girl-female-outside-nature-forest-artistic-edgy-cute-pretty-face-ai-generated_590464-133625.jpg"
+    permission: 'employee',
+    profilePhoto: "https://media.gq.com/photos/5cd0a78cb41d092460cd73bf/1:1/w_1125,h_1125,c_limit/Keanu-Con-GQ-2019-050619.jpg"
   },
   {
     email: 'garnerfrye@assistia.com',
@@ -250,18 +230,16 @@ export const USERS = [
     startingDate: '2023-10-18',
     sex: 'male',
     nationality: 'bulgarian',
-    city: 'Varna',
     country: 'Bulgaria',
-    bankDetails: 'sjdkna128721mnsa',
     salary: 2000,
     salaryCurrency: 'british pound',
-    department: 'HR',
-    directManagerID: 17,
+    department: 'Accounting',
+    directManagerID: 2,
     position: 'mid',
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto : "https://allmyfriendsarejpegs.com/wp-content/uploads/2018/02/dsc074972.jpg"
+    profilePhoto: "https://allmyfriendsarejpegs.com/wp-content/uploads/2018/02/dsc074972.jpg"
   },
   {
     email: 'hermananderson@assistia.com',
@@ -274,18 +252,16 @@ export const USERS = [
     startingDate: '2023-10-18',
     sex: 'male',
     nationality: 'bulgarian',
-    city: 'Varna',
     country: 'Bulgaria',
-    bankDetails: 'sjdkna128721mnsa',
     salary: 2000,
     salaryCurrency: 'british pound',
-    department: 'HR',
-    directManagerID: 17,
+    department: 'IT',
+    directManagerID: 3,
     position: 'mid',
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto : "https://thumbs.dreamstime.com/b/people-beauty-emotions-lifestyle-concept-close-up-portrait-brunette-female-appealing-look-enjoys-calm-peaceful-atm-117568554.jpg"
+    profilePhoto: "https://thumbs.dreamstime.com/b/people-beauty-emotions-lifestyle-concept-close-up-portrait-brunette-female-appealing-look-enjoys-calm-peaceful-atm-117568554.jpg"
   },
   {
     email: 'lindsayrandall@assistia.com',
@@ -298,18 +274,16 @@ export const USERS = [
     startingDate: '2023-10-18',
     sex: 'male',
     nationality: 'bulgarian',
-    city: 'Varna',
     country: 'Bulgaria',
-    bankDetails: 'sjdkna128721mnsa',
     salary: 2000,
     salaryCurrency: 'british pound',
-    department: 'HR',
-    directManagerID: 17,
+    department: 'Accounting',
+    directManagerID: 3,
     position: 'mid',
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdns0xZPSLMdTGiJu9Gp1rz--uKyAumohZAw&usqp=CAU"
+    profilePhoto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdns0xZPSLMdTGiJu9Gp1rz--uKyAumohZAw&usqp=CAU"
   },
   {
     email: 'luzmassey@assistia.com',
@@ -322,18 +296,16 @@ export const USERS = [
     startingDate: '2023-10-18',
     sex: 'male',
     nationality: 'bulgarian',
-    city: 'Varna',
     country: 'Bulgaria',
-    bankDetails: 'sjdkna128721mnsa',
     salary: 2000,
     salaryCurrency: 'british pound',
     department: 'IT',
-    directManagerID: 17,
-    position: 'mid',
+    directManagerID: 3,
+    position: 'senior',
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto : "https://www.neilsonreeves.co.uk/wp-content/uploads/Corporate-Headshot-grey-background.jpg"
+    profilePhoto: "https://www.neilsonreeves.co.uk/wp-content/uploads/Corporate-Headshot-grey-background.jpg"
   },
   {
     email: 'englishhorne@assistia.com',
@@ -346,28 +318,26 @@ export const USERS = [
     startingDate: '2023-10-18',
     sex: 'male',
     nationality: 'bulgarian',
-    city: 'Varna',
     country: 'Bulgaria',
-    bankDetails: 'sjdkna128721mnsa',
     salary: 2000,
     salaryCurrency: 'lev',
-    department: 'IT',
-    directManagerID: 17,
-    position: 'mid',
+    department: 'Accounting',
+    directManagerID: 3,
+    position: 'junior',
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto : "https://mymodernmet.com/wp/wp-content/uploads/2019/02/magdalena-bagrianow-india-portrait-photo-11.jpg"
+    profilePhoto: "https://mymodernmet.com/wp/wp-content/uploads/2019/02/magdalena-bagrianow-india-portrait-photo-11.jpg"
   }
 ]
 
-  // let updatedUsers = USERS.map((obj, index) => {
-  //   return {
-  //     ...obj, id: index
-  //   }
-  // })
+// let updatedUsers = USERS.map((obj, index) => {
+//   return {
+//     ...obj, id: index
+//   }
+// })
 
-  // console.log(updatedUsers);
+// console.log(updatedUsers);
 
 
 //   type newObject = {
