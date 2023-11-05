@@ -1,38 +1,62 @@
-.login-form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    right: 55%;
-    position: absolute;
-    .login-container {
-        background: transparent;
-        box-shadow: none;
+.login-page-container {
+    height: 100%;
+    width: 100%;
+
+    .login-form-container {
         display: flex;
+        justify-content: center;
         align-items: center;
+        height: 100vh;
+        right: 55%;
+        position: absolute;
 
-        mat-card-header {
-            margin-bottom: 20px;
-            mat-card-title {
-            font-size: 30px;
+        .login-container {
+            background: transparent;
+            box-shadow: none;
+            display: flex;
+            align-items: center;
+
+            mat-card-header {
+                margin-bottom: 20px;
+
+                mat-card-title {
+                    font-size: 30px;
+                }
             }
-        }
 
-        // width: 200px;
-        form {
-            display: flex;
-            flex-direction: column;
-        }
+            form {
+                display: flex;
+                flex-direction: column;
+            }
 
-        mat-error {
-            font-size: 14px;
-            font-weight: 500;
-            display: flex;
-            justify-content: center;
-        }
+            .error-container {
+                display: flex;
+                justify-content: center;
+                height: 20px;
+                margin: 10px 0px;
 
-        mat-form-field {
-            width: 370px;
+                mat-error {
+                    font-size: 18px;
+                    font-weight: 500;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
+            mat-form-field {
+                width: 370px;
+            }
+
+            .button-container {
+                display: flex;
+                justify-content: center;
+
+                button {
+                    margin-bottom: 10px;
+                    width: fit-content;
+                    padding: 0px 40px;
+                }
+            }
         }
     }
 }

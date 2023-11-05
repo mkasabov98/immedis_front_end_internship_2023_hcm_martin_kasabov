@@ -2,7 +2,7 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule} from "@angular/forms"
+import { FormsModule } from "@angular/forms"
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,10 +13,11 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
-import { MatRadioModule} from '@angular/material/radio';
-import { MatSelectModule} from "@angular/material/select";
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from "@angular/material/select";
 import { MatDialogModule } from "@angular/material/dialog";
-import { MatSnackBarModule} from "@angular/material/snack-bar"
+import { MatSnackBarModule } from "@angular/material/snack-bar"
+import { MatTableModule } from "@angular/material/table"
 
 //components
 import { AppComponent } from './app.component';
@@ -46,6 +47,7 @@ import { RecentDateValidatorDirective } from './customValidators/recent-date-val
 import { PasswordValidatorDirective } from './customValidators/password-validator.directive';
 import { UpdateUserInfoDialogComponent } from './components/display-user-page/update-user-info-dialog/update-user-info-dialog.component';
 import { ResetUserPasswordDialogComponent } from './components/display-user-page/reset-user-password-dialog/reset-user-password-dialog.component';
+import { UserCollectionTableComponent } from './components/search/user-collection-table/user-collection-table.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,7 @@ import { ResetUserPasswordDialogComponent } from './components/display-user-page
     DisplayUserPageComponent,
     UpdateUserInfoDialogComponent,
     ResetUserPasswordDialogComponent,
+    UserCollectionTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,6 +89,7 @@ import { ResetUserPasswordDialogComponent } from './components/display-user-page
     MatSelectModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatTableModule,
     StoreModule.forRoot({
       loggedUser: loginReducer,
       userCollection: userCollectionReducer,

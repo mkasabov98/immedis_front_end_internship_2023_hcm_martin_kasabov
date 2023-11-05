@@ -45,7 +45,11 @@ export class LoginPageComponent implements OnInit, OnDestroy {
 
     if (existingUser) {
       this.store.dispatch(login(existingUser));
-      this.router.navigate(["app/home"]);
+      if (existingUser.permission === 'admin') {
+        this.router.navigate(["app/addUser"]);
+      } else if (existingUser.permission === 'employee' || existingUser.permission === 'HR') {
+        this.router.navigate(["app/home"]);
+      }
       this.incorrectInput = false;
     } else {
       this.incorrectInput = true;

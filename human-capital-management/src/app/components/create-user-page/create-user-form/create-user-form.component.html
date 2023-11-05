@@ -42,25 +42,20 @@
                 <div class="form-row-container">
                     <mat-form-field appearance="fill" class="full-width">
                         <mat-label>Phone number</mat-label>
-                        <input ngModel matInput placeholder="Phone number" type="number" name="phoneNumber" required
+                        <input ngModel matInput placeholder="Phone number" type="text" pattern="[0-9]{10}" name="phoneNumber" required
                             minlength="10" maxlength="10" #phoneNumber="ngModel">
                         <mat-error *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)">
                             Should be 10 digits
                         </mat-error>
                     </mat-form-field>
-                    <!-- <mat-radio-group ngModel name="sex" required>
-                        <mat-label>Sex:</mat-label>
-                        <mat-radio-button value="male">Male</mat-radio-button>
-                        <mat-radio-button value="female">Female</mat-radio-button>
-                    </mat-radio-group> -->
                     <mat-form-field>
                         <mat-label>Sex</mat-label>
                         <mat-select ngModel name="sex" #sex="ngModel" required>
                             <mat-option value="male">Male</mat-option>
                             <mat-option value="female">Female</mat-option>
                         </mat-select>
-                        <mat-error
-                            *ngIf="sex.hasError('required') && (sex.touched || sex.dirty)">Sex is mandatory</mat-error>
+                        <mat-error *ngIf="sex.hasError('required') && (sex.touched || sex.dirty)">Sex is
+                            mandatory</mat-error>
                     </mat-form-field>
                     <mat-form-field appearance="fill" class="full-width">
                         <mat-label>Birthday</mat-label>
@@ -166,14 +161,18 @@
                             <mat-option *ngIf="loggedUser?.permission === 'admin'" [value]="'admin'">Admin</mat-option>
                         </mat-select>
                         <mat-error
-                            *ngIf="permission.hasError('required') && (permission.touched || permission.dirty)">Position is
+                            *ngIf="permission.hasError('required') && (permission.touched || permission.dirty)">Position
+                            is
                             mandatory</mat-error>
                     </mat-form-field>
                 </div>
                 <div class="form-row-container">
-                    <button mat-raised-button type="submit" color="primary" [disabled]="createUserForm.invalid">Create a
-                        new
-                        user</button>
+                    <button mat-raised-button type="submit" color="primary" [disabled]="createUserForm.invalid">
+                        Create a new user</button>
+                </div>
+                <div class="form-row-container">
+                    <mat-error *ngIf="emailFlag">There is a user with that email</mat-error>
+                    <mat-error *ngIf="phoneNumberFlag">There is a user with that phone number</mat-error>
                 </div>
             </form>
         </mat-card-content>

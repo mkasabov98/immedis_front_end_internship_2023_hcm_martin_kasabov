@@ -1,4 +1,5 @@
-<div class="login-form-container">
+<div class="login-page-container">
+  <div class="login-form-container">
     <mat-card class="login-container">
       <mat-card-header>
         <mat-card-title>Please log in</mat-card-title>
@@ -7,26 +8,31 @@
         <form #loginForm="ngForm" (ngSubmit)="onSubmit(f)" #f="ngForm">
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Email</mat-label>
-            <input ngModel matInput placeholder="Email" type="email" name="email" required email #email="ngModel" (ngModelChange)="resetIncorrectInput()">
+            <input ngModel matInput placeholder="Email" type="email" name="email" required email #email="ngModel"
+              (ngModelChange)="resetIncorrectInput()">
             <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
               Please enter a valid email address.
             </mat-error>
           </mat-form-field>
-  
+
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Password</mat-label>
-            <input ngModel matInput placeholder="Password" type="password" name="password" required minlength="8" maxlength="16" #password="ngModel" (ngModelChange)="resetIncorrectInput()">
+            <input ngModel matInput placeholder="Password" type="password" name="password" required minlength="8"
+              maxlength="16" #password="ngModel" (ngModelChange)="resetIncorrectInput()">
             <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
               Password must be between 8 and 16 characters.
             </mat-error>
           </mat-form-field>
-  
-          <button mat-raised-button type="submit" color="primary" [disabled]="loginForm.invalid">Login</button>
-          <mat-error *ngIf="incorrectInput" style="margin-top: 0px;">
-            Wrong credentials!
-          </mat-error>
+          <div class="button-container">
+            <button mat-raised-button type="submit" color="primary" [disabled]="loginForm.invalid">Login</button>
+          </div>
+          <div class="error-container">
+            <mat-error *ngIf="incorrectInput" style="margin-top: 0px;">
+              Wrong credentials!
+            </mat-error>
+          </div>
         </form>
       </mat-card-content>
     </mat-card>
   </div>
-  
+</div>
