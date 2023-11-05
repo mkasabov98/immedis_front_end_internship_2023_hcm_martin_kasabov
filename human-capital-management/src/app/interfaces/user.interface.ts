@@ -21,3 +21,15 @@ export interface userInterface {
     permission: string,
     profilePhoto: string
 }
+
+export interface userToShowInTableInterface {
+    id: number,
+    firstName: string,
+    lastName: string,
+    salary: number,
+    salaryCurrency: string,
+    position: string,
+    department: string,
+    directManagerID?: number | null;
+    directManagerName?: string;
+}

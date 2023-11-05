@@ -31,3 +31,8 @@ export const updateUserInformation = createAction(
     "[Update User Information] UpdateUserInformation",
     props<{userToUpdate:userInterface}>()
 )
+
+export const deleteUser = createAction(
+    "[Delete User} DeleteUser",
+    props<{id: number}>()
+)

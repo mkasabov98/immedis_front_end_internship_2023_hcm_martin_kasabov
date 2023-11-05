@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { userInterface } from "src/app/interfaces/user.interface";
-import { addUser, changeEmail, changePassword, changeProfilePhoto, chnagePhoneNumber, updateUserInformation } from "./user-collection.actions";
+import { addUser, changeEmail, changePassword, changeProfilePhoto, chnagePhoneNumber, deleteUser, updateUserInformation } from "./user-collection.actions";
 import { USERS } from "src/app/data/users";
 
 const initialState: userInterface[] = USERS;
@@ -73,5 +73,28 @@ export const userCollectionReducer = createReducer(
             ]
         }
         return state
+    }),
+    on(deleteUser, (state, { id }) => {
+        let stateToUpdate!: userInterface[];
+
+        const userToDeleteIndex = state.findIndex(user => user.id === id);
+        if (state[userToDeleteIndex].manager === true) {
+            stateToUpdate = state.map(user => {
+                if (user.directManagerID === id) {
+                    return { ...user, directManagerID: null };
+                } else {
+                    return user;
+                }
+            })
+        } else {
+            stateToUpdate = [...state]
+        }
+        if (userToDeleteIndex === -1) {
+            return stateToUpdate
+        } else {
+            return [
+                ...stateToUpdate.slice(0, userToDeleteIndex), ...stateToUpdate.slice(userToDeleteIndex + 1)
+            ]
+        }
     })
 )

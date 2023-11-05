@@ -1,0 +1,22 @@
+.delete-user-dialog-container {
+    display: flex;
+
+    .header-container {
+
+        font-size: 20px;
+        margin: 10px 0px 20px;
+
+        ::ng-deep .mat-mdc-card-header-text {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0px 10px;
+    }
+}

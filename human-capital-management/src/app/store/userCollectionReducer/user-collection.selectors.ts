@@ -1,10 +1,31 @@
-import { userInterface } from "src/app/interfaces/user.interface";
+import { userInterface, userToShowInTableInterface } from "src/app/interfaces/user.interface";
 import { StoreInterface } from "../../interfaces/store.interface";
 
 export const selectAllManagers = (store: StoreInterface) => {
     const managers = store.userCollection.filter(user => user.manager)
         .map(({ id, firstName, lastName }) => ({ id, firstName, lastName }));
     return managers;
+}
+
+export const selectAllUsersSpecificInfo = (store: StoreInterface) => {
+    const collection: userToShowInTableInterface[] = store.userCollection.filter(user => user.permission !== 'admin')
+        .map(({ id, firstName, lastName, salary, salaryCurrency, position, department, directManagerID }) => (
+            { id, firstName, lastName, salary, salaryCurrency, position, department, directManagerID }
+        ))
+    const collectionToShow: userToShowInTableInterface[] = collection.map(user => {
+        const directManagerId = user.directManagerID;
+        const directManager = collection.find(user => user.id === directManagerId);
+        let directManagerName: string;
+
+        if (directManager === undefined) {
+            directManagerName = 'No manager';
+        } else {
+            directManagerName = `${directManager.firstName} ${directManager.lastName}`;
+        }
+        delete user.directManagerID
+        return ({ ...user, directManagerName: directManagerName })
+    })
+    return collectionToShow;
 }
 
 export const selectNumberOfUsers = (store: StoreInterface) => {
