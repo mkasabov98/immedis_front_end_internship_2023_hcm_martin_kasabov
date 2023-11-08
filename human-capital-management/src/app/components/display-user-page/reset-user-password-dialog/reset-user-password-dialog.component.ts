@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
@@ -11,7 +11,7 @@ import { CustomMaterialSnackbarComponent } from '../../../services/custom-materi
   templateUrl: './reset-user-password-dialog.component.html',
   styleUrls: ['./reset-user-password-dialog.component.scss']
 })
-export class ResetUserPasswordDialogComponent implements OnInit {
+export class ResetUserPasswordDialogComponent {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public userId: number,
@@ -22,13 +22,7 @@ export class ResetUserPasswordDialogComponent implements OnInit {
 
   passwordsMatchFlag = false;
 
-  ngOnInit(): void {
-    console.log(this.userId)
-  }
-
   onSubmitResetPasswordForm(form: NgForm) {
-    // this.passwordsMatchFlag = false;
-    console.log(form)
     if (form.value.newPassword !== form.value.repeatedPassword) {
       this.passwordsMatchFlag = true;
     } else {

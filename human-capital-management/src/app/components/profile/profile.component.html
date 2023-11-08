@@ -1,4 +1,13 @@
-<div class="profile-page-container">
+<div class="profile-page-container-not-admin" *ngIf="loggedUser!.permission !== 'admin'">
+    <div class="first-column">
+        <app-profile-section [loggedUser]="loggedUser"></app-profile-section>
+    </div>
+    <div class="second-column">
+        <app-leave-request-form [loggedUserId]="loggedUserId"></app-leave-request-form>
+        <app-personal-leave-requests-table [looggedUser]="loggedUser"></app-personal-leave-requests-table>
+    </div>
+</div>
+
+<div class="profile-page-container-admin" *ngIf="loggedUser!.permission === 'admin'">
     <app-profile-section [loggedUser]="loggedUser"></app-profile-section>
-    <app-leave-request-form *ngIf="loggedUser!.permission !== 'admin'" [loggedUserId]="loggedUserId"></app-leave-request-form>
 </div>

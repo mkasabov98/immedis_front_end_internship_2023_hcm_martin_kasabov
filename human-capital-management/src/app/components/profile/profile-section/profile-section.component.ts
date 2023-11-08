@@ -3,7 +3,6 @@ import { Store } from '@ngrx/store';
 import { loggedUSerInterface } from 'src/app/interfaces/loggedUser.interface';
 import { StoreInterface } from 'src/app/interfaces/store.interface';
 import { Observable, Subject, takeUntil } from "rxjs"
-import { selectLoggedUser } from 'src/app/store/loginReducer/login.selectors';
 import { userInterface } from 'src/app/interfaces/user.interface';
 import { selectUserCollection } from 'src/app/store/userCollectionReducer/user-collection.selectors';
 import { NgForm } from '@angular/forms';
@@ -44,7 +43,6 @@ export class ProfileSectionComponent implements OnInit, OnDestroy {
       this.loggedUserToShow = this.userCollection.find(user => user.id === this.loggedUser?.id) as userInterface;
       this.emailInputValue = this.loggedUserToShow.email;
       this.phoneNumberInputValue = this.loggedUserToShow.phoneNumber;
-      // console.log(this.loggedUserToShow)
     })
 
   }
@@ -56,7 +54,6 @@ export class ProfileSectionComponent implements OnInit, OnDestroy {
 
   onChangePassword() {
     this.showChangePasswordSectionFlag = !this.showChangePasswordSectionFlag;
-    // console.log(this.showChangePasswordSectionFlag)
   }
 
   onPasswordChangeFormSubmit(form: NgForm) {

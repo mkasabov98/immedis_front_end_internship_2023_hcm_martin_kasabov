@@ -14,7 +14,7 @@ export const userCollectionReducer = createReducer(
         const userToUpdateIndex = state.findIndex(user => user.id === userID);
 
         if (userToUpdateIndex !== -1) {
-            const userToUpdate = { ...state[userToUpdateIndex], password: newPassword };
+            const userToUpdate = { ...state[userToUpdateIndex], password: newPassword, changedPassword: true };
             return [
                 ...state.slice(0, userToUpdateIndex),
                 userToUpdate,

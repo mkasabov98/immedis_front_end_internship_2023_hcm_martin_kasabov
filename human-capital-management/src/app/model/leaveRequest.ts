@@ -8,7 +8,9 @@ export class leaveRequest {
         public userRequestingLeaveName: string,
         public isAccepted: boolean | null = null,
         public handlerId: number | null = null,
-        public message: string = ""
+        public message: string = "",
+        public handledOn: string | null = null,
+        public handlerName: string | null = null,
     ){
         this.leaveRequestId = this.generateUniqueId();
         this.dateOfCreation = `${new Date().getMonth() + 1}/${new Date().getDate()}/${new Date().getFullYear()}`;

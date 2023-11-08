@@ -60,7 +60,7 @@
                     <mat-form-field appearance="fill" class="full-width">
                         <mat-label>Birthday</mat-label>
                         <input ngModel matInput yearValidator placeholder="Birthday mm/dd/yyyy" type="date"
-                            name="birthDate" required #birthDate="ngModel">
+                            name="birthDate" required #birthDate="ngModel" maxlength="10">
                         <mat-error *ngIf="birthDate.hasError('yearExceeded')">
                             Year cannot exceed year 2004.
                         </mat-error>

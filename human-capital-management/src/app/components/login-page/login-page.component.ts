@@ -2,12 +2,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { USERS } from 'src/app/data/users';
 import { userInterface } from 'src/app/interfaces/user.interface';
 import { login } from 'src/app/store/loginReducer/login.actions';
 import { Observable, Subject, take, takeUntil } from 'rxjs';
 import { selectUserCollection } from 'src/app/store/userCollectionReducer/user-collection.selectors';
 import { StoreInterface } from 'src/app/interfaces/store.interface';
+import { CustomMaterialSnackbarComponent } from 'src/app/services/custom-material-snackbar/custom-material-snackbar';
 
 @Component({
   selector: 'app-login-page',
@@ -15,7 +15,11 @@ import { StoreInterface } from 'src/app/interfaces/store.interface';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit, OnDestroy {
-  constructor(private router: Router, private store: Store<StoreInterface>) { }
+  constructor(
+    private router: Router,
+    private store: Store<StoreInterface>,
+    private snackbar: CustomMaterialSnackbarComponent
+    ) { }
   incorrectInput = false;
 
   usersCollection$: Observable<userInterface[]> = new Observable();
@@ -49,6 +53,9 @@ export class LoginPageComponent implements OnInit, OnDestroy {
         this.router.navigate(["app/addUser"]);
       } else if (existingUser.permission === 'employee' || existingUser.permission === 'HR') {
         this.router.navigate(["app/home"]);
+        if (!existingUser.changedPassword) {
+          this.snackbar.openSnackBar("Please navigate to the profile page and change your password!")
+        }
       }
       this.incorrectInput = false;
     } else {

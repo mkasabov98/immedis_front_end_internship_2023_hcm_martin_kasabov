@@ -29,35 +29,17 @@ export class HomePageComponent implements OnInit, OnDestroy {
     this.loggedUser$ = this.store.select(selectLoggedUser);
     this.loggedUser$.pipe(takeUntil(this.destroy$)).subscribe(data => {
       this.loggedUser = data;
-      console.log(this.loggedUser)
     })
-    this.loggedUserTeam$ = this.store.select(state => selectLoggedUserTeam(state, this.loggedUser?.id!));
+    this.loggedUserTeam$ = this.store.select(state => selectLoggedUserTeam(state, this.loggedUser!.id));
     this.loggedUserTeam$.pipe(takeUntil(this.destroy$)).subscribe(data => {
       this.loggedUserTeam = data;
     })
     this.loggedUserDepartmentCollection$ = this.store.select(state => selectLoggedUserDepartment(state, this.loggedUser?.id!));
     this.loggedUserDepartmentCollection$.pipe(takeUntil(this.destroy$)).subscribe(data => {
       this.loggedUserDepartmentCollection = data;
-      console.log(this.loggedUserDepartmentCollection);
     })
   }
 
-//   ngOnInit(): void {
-//     this.loggedUser$ = this.store.select(selectLoggedUser);
-
-//     this.loggedUser$.pipe(
-//       takeUntil(this.destroy$),
-//       switchMap(loggedUser => {
-//         this.loggedUser = loggedUser;
-//         console.log(this.loggedUser);
-
-//         return this.store.select(state => selectLoggedUserTeam(state, this.loggedUser?.id!));
-//       })
-//     ).subscribe(loggedUserTeam => {
-//       this.loggedUserTeam = loggedUserTeam;
-//       console.log(this.loggedUserTeam);
-//     });
-// }
   ngOnDestroy(): void {
     this.destroy$.next()
     this.destroy$.complete()

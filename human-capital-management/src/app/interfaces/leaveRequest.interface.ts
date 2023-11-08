@@ -7,5 +7,7 @@ export interface leaveRequestInterface {
     dateOfCreation: string,
     message: string,
     userRequestingLeaveName: string,
-    leaveRequestId: number
+    leaveRequestId: number,
+    handledOn: string | null,
+    handlerName: string | null
 }

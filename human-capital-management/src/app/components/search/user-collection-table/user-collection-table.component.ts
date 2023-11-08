@@ -37,7 +37,6 @@ export class UserCollectionTableComponent implements OnInit, OnDestroy, AfterVie
     this.userCollection$ = this.store.select(selectAllUsersSpecificInfo);
     this.userCollection$.pipe(takeUntil(this.destroy$)).subscribe(data => {
       this.userCollection = new MatTableDataSource(data)
-      console.log(this.userCollection)
     })
   }
 

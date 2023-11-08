@@ -66,6 +66,13 @@
                             <mat-option *ngFor="let currency of currencies" [value]="currency">{{currency}}</mat-option>
                         </mat-select>
                     </mat-form-field>
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Available Leave Days</mat-label>
+                        <input [(ngModel)]="userToUpdate.paidLeaveDaysLeft" matInput placeholder="Available Leave Days" type="number"
+                            name="availableLeaveDays" #availableLeaveDays="ngModel" required>
+                        <mat-error *ngIf="availableLeaveDays.hasError('required') && (availableLeaveDays.dirty || availableLeaveDays.touched)">Number is
+                            mandatory</mat-error>
+                    </mat-form-field>
                 </div>
                 <div class="update-user-info-form-row">
                     <button mat-raised-button color="primary" [disabled]="updateInfoForm.invalid">Save Changes</button>
