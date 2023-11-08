@@ -1,4 +1,5 @@
 import { countryDetailsInterface } from "./countryDetails.interface";
+import { leaveRequestInterface } from "./leaveRequest.interface";
 import { loggedUSerInterface } from "./loggedUser.interface";
 import { userInterface } from "./user.interface";
 import { workforceDetailsInterface } from "./workforceDetails.interface";
@@ -8,4 +9,5 @@ export interface StoreInterface{
     countryDetails: countryDetailsInterface;
     userCollection: userInterface[];
     workforceDetails: workforceDetailsInterface
+    leaveRequestsCollection: leaveRequestInterface[];
 }

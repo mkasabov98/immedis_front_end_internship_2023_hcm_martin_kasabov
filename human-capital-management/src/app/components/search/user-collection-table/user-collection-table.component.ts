@@ -16,6 +16,8 @@ import { selectAllUsersSpecificInfo } from 'src/app/store/userCollectionReducer/
   styleUrls: ['./user-collection-table.component.scss']
 })
 export class UserCollectionTableComponent implements OnInit, OnDestroy, AfterViewInit {
+  private destroy$ = new Subject<void>()
+  
   tableColumns = ["id", "firstName", "directManagerName", "position", "department", "salary", "details"];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -26,7 +28,6 @@ export class UserCollectionTableComponent implements OnInit, OnDestroy, AfterVie
     private router: Router
     ) { }
 
-  private destroy$ = new Subject<void>()
 
   userCollection$: Observable<userToShowInTableInterface[]> = new Observable();
   userCollection!: MatTableDataSource<userToShowInTableInterface>;

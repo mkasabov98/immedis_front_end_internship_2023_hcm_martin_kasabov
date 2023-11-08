@@ -1,0 +1,30 @@
+.leave-request-dialog-container {
+    mat-card {
+        display: flex;
+        align-items: center;
+        padding: 16px;
+
+        mat-card-header {
+            padding: 16px;
+        }
+
+        .inner-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .button-container {
+            mat-card-content {
+                div {
+                    justify-content: space-evenly;
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+.card::-webkit-scrollbar {
+    display: none;
+    gap: 10px;
+}

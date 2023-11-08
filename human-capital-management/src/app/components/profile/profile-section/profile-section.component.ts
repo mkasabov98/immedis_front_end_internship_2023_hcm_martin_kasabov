@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { loggedUSerInterface } from 'src/app/interfaces/loggedUser.interface';
 import { StoreInterface } from 'src/app/interfaces/store.interface';
@@ -15,6 +15,10 @@ import { CustomMaterialSnackbarComponent } from 'src/app/services/custom-materia
   styleUrls: ['./profile-section.component.scss']
 })
 export class ProfileSectionComponent implements OnInit, OnDestroy {
+  @Input() loggedUser!: loggedUSerInterface | null;
+
+  private destroy$ = new Subject<void>();
+
   showChangePasswordSectionFlag = false;
   wrongCurrentPasswordFlag = false;
   wrongNewPasswordFlag = false;
@@ -25,23 +29,15 @@ export class ProfileSectionComponent implements OnInit, OnDestroy {
   phoneNumberEditFlag = false;
   phoneNumberInputValue!: number;
 
-  loggedUser$: Observable<loggedUSerInterface | null> = new Observable();
   userCollection$: Observable<userInterface[]> = new Observable();
-
-  loggedUser!: loggedUSerInterface | null;
   userCollection: userInterface[] = [];
   loggedUserToShow!: userInterface;
-  private destroy$ = new Subject<void>();
 
   constructor(
     private store: Store<StoreInterface>,
     private snackbar: CustomMaterialSnackbarComponent) { }
 
   ngOnInit(): void {
-    this.loggedUser$ = this.store.select(selectLoggedUser);
-    this.loggedUser$.pipe(takeUntil(this.destroy$)).subscribe(data => {
-      this.loggedUser = data;
-    })
     this.userCollection$ = this.store.select(selectUserCollection);
     this.userCollection$.pipe(takeUntil(this.destroy$)).subscribe(data => {
       this.userCollection = data;
@@ -88,7 +84,6 @@ export class ProfileSectionComponent implements OnInit, OnDestroy {
   }
 
   onChangeEmailFormSubmit(form: NgForm) {
-    // console.log(this.emailInputValue)
     this.store.dispatch(changeEmail({ userID: this.loggedUser!.id, newEmail: this.emailInputValue }))
     this.emailEditFlag = false;
   }
@@ -98,8 +93,6 @@ export class ProfileSectionComponent implements OnInit, OnDestroy {
   }
 
   onChangePhoneNumberFormSubmit(form: NgForm) {
-    // console.log(typeof(this.phoneNumberInputValue))
-    // console.log(form)
     this.store.dispatch(chnagePhoneNumber({ userID: this.loggedUser!.id, newPhoneNumber: Number(this.phoneNumberInputValue) }));
     this.phoneNumberEditFlag = false;
   }
@@ -112,7 +105,7 @@ export class ProfileSectionComponent implements OnInit, OnDestroy {
 
       reader.onload = (e: any) => {
         const base64Image = e.target.result;
-        this.store.dispatch(changeProfilePhoto({userID: this.loggedUser!.id, newProfilePhoto: base64Image}));
+        this.store.dispatch(changeProfilePhoto({ userID: this.loggedUser!.id, newProfilePhoto: base64Image }));
       };
 
       reader.readAsDataURL(file);
@@ -122,6 +115,6 @@ export class ProfileSectionComponent implements OnInit, OnDestroy {
   }
 
   isImage(file: File): boolean {
-    return file.type.split('/')[0] === 'image'; 
+    return file.type.split('/')[0] === 'image';
   }
 }
