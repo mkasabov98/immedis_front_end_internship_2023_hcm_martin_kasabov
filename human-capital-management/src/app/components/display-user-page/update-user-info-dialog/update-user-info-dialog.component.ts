@@ -58,7 +58,6 @@ export class UpdateUserInfoDialogComponent implements OnInit {
     this.phoneNumberFlag = false;
     let existingEmail = false;
     let existingPhoneNumber = false;
-    console.log(this.userToUpdate)
     if (this.userToUpdate.position === "manager") {
       this.userToUpdate.manager = true;
       this.userToUpdate.directManagerID = null;
@@ -79,7 +78,6 @@ export class UpdateUserInfoDialogComponent implements OnInit {
           this.phoneNumberFlag = true;
           existingPhoneNumber = true;
         }
-        console.log(data)
       })
 
     if (existingEmail === false && existingPhoneNumber === false) {

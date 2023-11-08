@@ -19,7 +19,8 @@ export const USERS = [
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'admin',
-    profilePhoto: "https://api.writco.in/assets/images/user/1040200713102106134.webp"
+    profilePhoto: "https://api.writco.in/assets/images/user/1040200713102106134.webp",
+    changedPassword: false
   },
   {
     email: 'HRmanager@123456',
@@ -41,7 +42,8 @@ export const USERS = [
     manager: true,
     paidLeaveDaysLeft: 5,
     permission: 'HR',
-    profilePhoto: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/35af6a41332353.57a1ce913e889.jpg"
+    profilePhoto: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/35af6a41332353.57a1ce913e889.jpg",
+    changedPassword: false
   },
   {
     email: 'employeeM1@123',
@@ -63,7 +65,8 @@ export const USERS = [
     manager: true,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto: "https://www.kcrw.com/news/shows/press-play-with-madeleine-brand/tech-job-cuts-scientology-trials-ev-random-novel/@@images/rectangular_image/page-header?v=1668558373.12"
+    profilePhoto: "https://www.kcrw.com/news/shows/press-play-with-madeleine-brand/tech-job-cuts-scientology-trials-ev-random-novel/@@images/rectangular_image/page-header?v=1668558373.12",
+    changedPassword: false
   },
   {
     email: 'employeeM2@123',
@@ -85,7 +88,8 @@ export const USERS = [
     manager: true,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto: "https://i0.wp.com/thatrandomagency.com/wp-content/uploads/2020/05/0.jpg?resize=500%2C500&ssl=1"
+    profilePhoto: "https://i0.wp.com/thatrandomagency.com/wp-content/uploads/2020/05/0.jpg?resize=500%2C500&ssl=1",
+    changedPassword: false
   },
   {
     email: 'hatfieldhurley@assistia.com',
@@ -107,7 +111,8 @@ export const USERS = [
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'HR',
-    profilePhoto: "https://live.staticflickr.com/5252/5403292396_0804de9bcf_b.jpg"
+    profilePhoto: "https://live.staticflickr.com/5252/5403292396_0804de9bcf_b.jpg",
+    changedPassword: false
   },
   {
     email: 'dominiquecastro@assistia.com',
@@ -129,7 +134,8 @@ export const USERS = [
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'HR',
-    profilePhoto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwTE8WaJYfoLdKPUoVFvhOWtAKmDepJaQtQw&usqp=CAU"
+    profilePhoto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwTE8WaJYfoLdKPUoVFvhOWtAKmDepJaQtQw&usqp=CAU",
+    changedPassword: false
   },
   {
     email: 'wagnermorrow@assistia.com',
@@ -151,7 +157,8 @@ export const USERS = [
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'HR',
-    profilePhoto: "https://i.pinimg.com/736x/ee/e6/51/eee651694ba2b3112ffb3eb4525547e9.jpg"
+    profilePhoto: "https://i.pinimg.com/736x/ee/e6/51/eee651694ba2b3112ffb3eb4525547e9.jpg",
+    changedPassword: false
   },
   {
     email: 'fieldscolon@assistia.com',
@@ -173,7 +180,8 @@ export const USERS = [
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto: "https://i.pinimg.com/736x/4c/44/8f/4c448f7441520af626319813cdea3d22.jpg"
+    profilePhoto: "https://i.pinimg.com/736x/4c/44/8f/4c448f7441520af626319813cdea3d22.jpg",
+    changedPassword: false
   },
   {
     email: 'estesmarsh@assistia.com',
@@ -195,7 +203,8 @@ export const USERS = [
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto: "https://i.pinimg.com/736x/39/da/66/39da6656f187dcc802a7affb0e649539.jpg"
+    profilePhoto: "https://i.pinimg.com/736x/39/da/66/39da6656f187dcc802a7affb0e649539.jpg",
+    changedPassword: false
   },
   {
     email: 'employee@abv.com',
@@ -217,7 +226,8 @@ export const USERS = [
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto: "https://media.gq.com/photos/5cd0a78cb41d092460cd73bf/1:1/w_1125,h_1125,c_limit/Keanu-Con-GQ-2019-050619.jpg"
+    profilePhoto: "https://media.gq.com/photos/5cd0a78cb41d092460cd73bf/1:1/w_1125,h_1125,c_limit/Keanu-Con-GQ-2019-050619.jpg",
+    changedPassword: false
   },
   {
     email: 'garnerfrye@assistia.com',
@@ -239,7 +249,8 @@ export const USERS = [
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto: "https://allmyfriendsarejpegs.com/wp-content/uploads/2018/02/dsc074972.jpg"
+    profilePhoto: "https://allmyfriendsarejpegs.com/wp-content/uploads/2018/02/dsc074972.jpg",
+    changedPassword: false
   },
   {
     email: 'hermananderson@assistia.com',
@@ -261,7 +272,8 @@ export const USERS = [
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto: "https://thumbs.dreamstime.com/b/people-beauty-emotions-lifestyle-concept-close-up-portrait-brunette-female-appealing-look-enjoys-calm-peaceful-atm-117568554.jpg"
+    profilePhoto: "https://thumbs.dreamstime.com/b/people-beauty-emotions-lifestyle-concept-close-up-portrait-brunette-female-appealing-look-enjoys-calm-peaceful-atm-117568554.jpg",
+    changedPassword: false
   },
   {
     email: 'lindsayrandall@assistia.com',
@@ -283,7 +295,8 @@ export const USERS = [
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdns0xZPSLMdTGiJu9Gp1rz--uKyAumohZAw&usqp=CAU"
+    profilePhoto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdns0xZPSLMdTGiJu9Gp1rz--uKyAumohZAw&usqp=CAU",
+    changedPassword: false
   },
   {
     email: 'luzmassey@assistia.com',
@@ -305,7 +318,8 @@ export const USERS = [
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto: "https://www.neilsonreeves.co.uk/wp-content/uploads/Corporate-Headshot-grey-background.jpg"
+    profilePhoto: "https://www.neilsonreeves.co.uk/wp-content/uploads/Corporate-Headshot-grey-background.jpg",
+    changedPassword: false
   },
   {
     email: 'englishhorne@assistia.com',
@@ -327,32 +341,7 @@ export const USERS = [
     manager: false,
     paidLeaveDaysLeft: 5,
     permission: 'employee',
-    profilePhoto: "https://mymodernmet.com/wp/wp-content/uploads/2019/02/magdalena-bagrianow-india-portrait-photo-11.jpg"
+    profilePhoto: "https://mymodernmet.com/wp/wp-content/uploads/2019/02/magdalena-bagrianow-india-portrait-photo-11.jpg",
+    changedPassword: false
   }
 ]
-
-// let updatedUsers = USERS.map((obj, index) => {
-//   return {
-//     ...obj, id: index
-//   }
-// })
-
-// console.log(updatedUsers);
-
-
-//   type newObject = {
-//     email: string,
-//     password: string,
-//     firstName: string,
-//     lastName: string,
-//     [key:string]: any
-//   }
-
-//   function addPropertyToObjects(inputArray: newObject[], newPropertyKey: string, newPropertyValue: any): ObjectType[] {
-//     return inputArray.map(obj => {
-//         return {
-//             ...obj,
-//             [newPropertyKey]: newPropertyValue
-//         };
-//     });
-// }

@@ -6,13 +6,13 @@
         margin: 30px;
         form {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
             margin: 20px 0px;
 
             button {
                 width: fit-content;
-                margin-top: 15px;
+                margin: 15px;
             }
         }
     }

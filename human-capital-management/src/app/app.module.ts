@@ -56,6 +56,7 @@ import { DeleteUserDialogComponent } from './components/display-user-page/delete
 import { LeaveRequestFormComponent } from './components/profile/leave-request-form/leave-request-form.component';
 import { leaveRequestsCollectionReducer } from './store/leaveRequestsCollectionReducer/leaveRequestsCollection.reducer';
 import { LeaveRequestDetailsDialogComponent } from './components/dashboard/leave-request-details-dialog/leave-request-details-dialog.component';
+import { PersonalLeaveRequestsTableComponent } from './components/profile/personal-leave-requests-table/personal-leave-requests-table.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { LeaveRequestDetailsDialogComponent } from './components/dashboard/leave
     DeleteUserDialogComponent,
     LeaveRequestFormComponent,
     LeaveRequestDetailsDialogComponent,
+    PersonalLeaveRequestsTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -114,12 +116,12 @@ import { LeaveRequestDetailsDialogComponent } from './components/dashboard/leave
       leaveRequestsCollection: leaveRequestsCollectionReducer
     }),
     StoreDevtoolsModule.instrument({
-      maxAge: 25, // Retains last 25 states
-      logOnly: !isDevMode(), // Restrict extension to log-only mode
-      autoPause: true, // Pauses recording actions and state changes when the extension window is not open
-      trace: false, //  If set to true, will include stack trace for every dispatched action, so you can see it in trace tab jumping directly to that part of code
-      traceLimit: 75, // maximum stack trace frames to be stored (in case trace option was provided as true)
-      connectOutsideZone: true // If set to true, the connection is established outside the Angular zone for better performance
+      maxAge: 25, 
+      logOnly: !isDevMode(), 
+      autoPause: true, 
+      trace: false, 
+      traceLimit: 75, 
+      connectOutsideZone: true 
     }),
   ],
   providers: [],

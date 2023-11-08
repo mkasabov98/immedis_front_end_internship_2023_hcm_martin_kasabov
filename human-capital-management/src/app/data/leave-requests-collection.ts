@@ -8,7 +8,9 @@ export const LEAVE_REQUESTS_COLLECTION = [
         message: '',
         dateOfCreation: '11/04/2023',
         userRequestingLeaveName: "Gallegos Browning",
-        leaveRequestId: 213213213
+        leaveRequestId: 213213213,
+        handledOn: null,
+        handlerName: null
     },
     {
         startDate: '11/05/2023',
@@ -19,7 +21,9 @@ export const LEAVE_REQUESTS_COLLECTION = [
         message: '',
         dateOfCreation: '11/04/2023',
         userRequestingLeaveName: "Dominique Castro",
-        leaveRequestId: 21321324332
+        leaveRequestId: 21321324332,
+        handledOn: null,
+        handlerName: null
     },
     {
         startDate: '11/05/2023',
@@ -30,7 +34,9 @@ export const LEAVE_REQUESTS_COLLECTION = [
         message: '',
         dateOfCreation: '11/04/2023',
         userRequestingLeaveName: "Wagner Morrow",
-        leaveRequestId: 21321378
+        leaveRequestId: 21321378,
+        handledOn: null,
+        handlerName: null
     },
     {
         startDate: '11/05/2023',
@@ -41,7 +47,9 @@ export const LEAVE_REQUESTS_COLLECTION = [
         message: '',
         dateOfCreation: '11/04/2023',
         userRequestingLeaveName: "Estes Marsh",
-        leaveRequestId: 21321389
+        leaveRequestId: 21321389,
+        handledOn: null,
+        handlerName: null
     },
     {
         startDate: '11/05/2023',
@@ -52,7 +60,9 @@ export const LEAVE_REQUESTS_COLLECTION = [
         message: '',
         dateOfCreation: '11/04/2023',
         userRequestingLeaveName: "Luz Massey",
-        leaveRequestId: 21321352
+        leaveRequestId: 21321352,
+        handledOn: null,
+        handlerName: null
     },
     {
         startDate: '11/05/2023',
@@ -63,6 +73,86 @@ export const LEAVE_REQUESTS_COLLECTION = [
         message: '',
         dateOfCreation: '11/04/2023',
         userRequestingLeaveName: "English Horne",
-        leaveRequestId: 213213224
+        leaveRequestId: 213213224,
+        handledOn: null,
+        handlerName: null
+    },
+    {
+        startDate: '11/05/2023',
+        endDate: '11/11/2023',
+        userRequestingLeaveId: 1,
+        isAccepted: false,
+        handlerId: 4,
+        message: 'ilawje qwklejl qwklqw elq',
+        dateOfCreation: '11/04/2023',
+        userRequestingLeaveName: "Elaine Maddox",
+        leaveRequestId: 213213852,
+        handledOn: '11/04/2023',
+        handlerName: 'Dominique Castro'
+    },
+    {
+        startDate: '11/05/2023',
+        endDate: '11/11/2023',
+        userRequestingLeaveId: 1,
+        isAccepted: true,
+        handlerId: 4,
+        message: 'qwkllje qwj eklkwqj e wq;lkqw',
+        dateOfCreation: '11/04/2023',
+        userRequestingLeaveName: "Elaine Maddox",
+        leaveRequestId: 213213965,
+        handledOn: '11/04/2023',
+        handlerName: 'Dominique Castro'
+    },
+    {
+        startDate: '11/05/2023',
+        endDate: '11/11/2023',
+        userRequestingLeaveId: 1,
+        isAccepted: false,
+        handlerId: 4,
+        message: 'kqwje qwj ekl;qwj jq wi;e q',
+        dateOfCreation: '11/04/2023',
+        userRequestingLeaveName: "Elaine Maddox",
+        leaveRequestId: 213213541,
+        handledOn: '11/04/2023',
+        handlerName: 'Dominique Castro'
+    },
+    {
+        startDate: '11/05/2023',
+        endDate: '11/11/2023',
+        userRequestingLeaveId: 1,
+        isAccepted: false,
+        handlerId: 5,
+        message: 'wqle oqw helqwj elqw ekqw qweqwe qw',
+        dateOfCreation: '11/04/2023',
+        userRequestingLeaveName: "Elaine Maddox",
+        leaveRequestId: 213213235,
+        handledOn: '11/04/2023',
+        handlerName: 'Dominique Castro'
+    },
+    {
+        startDate: '11/05/2023',
+        endDate: '11/11/2023',
+        userRequestingLeaveId: 1,
+        isAccepted: true,
+        handlerId: 5,
+        message: ' qweqwe qw eqwe qweqwe wqeqweqw',
+        dateOfCreation: '11/04/2023',
+        userRequestingLeaveName: "Elaine Maddox",
+        leaveRequestId: 213213123,
+        handledOn: '11/04/2023',
+        handlerName: 'Dominique Castro'
+    },
+    {
+        startDate: '11/05/2023',
+        endDate: '11/11/2023',
+        userRequestingLeaveId: 1,
+        isAccepted: null,
+        handlerId: null,
+        message: '',
+        dateOfCreation: '11/04/2023',
+        userRequestingLeaveName: "Elaine Maddox",
+        leaveRequestId: 2145258123,
+        handledOn: null,
+        handlerName: null
     }
 ]

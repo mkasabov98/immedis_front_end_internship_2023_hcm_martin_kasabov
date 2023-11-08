@@ -77,24 +77,6 @@ export class CreateUserFormComponent implements OnInit {
     this.destroy$.complete();
   }
 
-  // onSubmit(form: NgForm) {
-  //   const { email, password, firstName, lastName, phoneNumber, birthDate, startingDate,
-  //     sex, nationality, country, salary, currency, department, position, permission } = form.value;
-  //   let directManagerID: number | null;
-  //   let manager: boolean;
-
-  //   form.value.directManagerID !== undefined ? directManagerID
-  //     = form.value.directManagerID : directManagerID = null;
-  //   position === "manager" ? manager = true : manager = false;
-
-  //   const newUser = new User(email, password, firstName, lastName,
-  //     phoneNumber, birthDate, startingDate, sex, nationality, country,
-  //     salary, currency, department, directManagerID, position, manager, permission);
-
-  //   console.log(newUser)
-  //   this.store.dispatch(addUser(newUser));
-  // }
-
   onSubmit(form: NgForm) {
     this.emailFlag = false;
     this.phoneNumberFlag = false;

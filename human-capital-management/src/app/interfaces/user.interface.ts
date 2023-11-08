@@ -10,7 +10,6 @@ export interface userInterface {
     sex: string,
     nationality: string,
     country: string,
-    // bankDetails: string,
     salary: number,
     salaryCurrency: string,
     department: string,
@@ -19,7 +18,8 @@ export interface userInterface {
     manager: boolean,
     paidLeaveDaysLeft: number,
     permission: string,
-    profilePhoto: string
+    profilePhoto: string,
+    changedPassword: boolean
 }
 
 export interface userToShowInTableInterface {

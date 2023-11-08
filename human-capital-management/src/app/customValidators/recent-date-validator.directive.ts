@@ -1,4 +1,3 @@
-// date-validator.directive.ts
 import { NG_VALIDATORS, Validator, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Directive } from '@angular/core';
 

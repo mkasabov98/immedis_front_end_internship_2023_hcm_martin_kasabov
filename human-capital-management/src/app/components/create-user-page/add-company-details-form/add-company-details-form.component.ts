@@ -39,32 +39,26 @@ export class AddCompanyDetailsFormComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.allCountries$ = this.store.select(selectAllCountries);
     this.allCountries$.pipe(takeUntil(this.destroy$)).subscribe(data => {
-      this.allCountries = data;
-      console.log(this.allCountries)
     });
 
     this.allNationalities$ = this.store.select(selectAllNationalities);
     this.allNationalities$.pipe(takeUntil(this.destroy$)).subscribe(data => {
       this.allNationalities = data;
-      console.log(this.allNationalities)
     });
 
     this.allCurrencies$ = this.store.select(selectAllCurrencies);
     this.allCurrencies$.pipe(takeUntil(this.destroy$)).subscribe(data => {
       this.allCurrencies = data;
-      console.log(this.allCurrencies)
     });
 
     this.allDepartments$ = this.store.select(selectAllDepartments);
     this.allDepartments$.pipe(takeUntil(this.destroy$)).subscribe(data => {
       this.allDepartments = data;
-      console.log(data)
     });
 
     this.allPositions$ = this.store.select(selectAllPositions);
     this.allPositions$.pipe(takeUntil(this.destroy$)).subscribe(data => {
       this.allPositions = data;
-      console.log(data)
     })
   }
 

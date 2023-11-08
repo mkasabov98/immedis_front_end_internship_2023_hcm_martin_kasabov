@@ -3,7 +3,6 @@ import { Store } from '@ngrx/store';
 import { StoreInterface } from 'src/app/interfaces/store.interface';
 import { selectNotHandledRequests } from 'src/app/store/leaveRequestsCollectionReducer/leaveRequestsCollection.selectors';
 import { Observable, Subject, takeUntil} from 'rxjs'
-import { leaveRequest } from 'src/app/model/leaveRequest';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';

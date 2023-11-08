@@ -40,7 +40,6 @@ export class DisplayUserPageComponent implements OnInit, OnDestroy {
     this.user$ = this.store.select(store => selectSpecificUser(store, Number(this.userToShowId)));
     this.user$.pipe(takeUntil(this.destroy$)).subscribe(data => {
       this.user = data;
-      // console.log(this.user)
     })
     this.loggedUser$ = this.store.select(selectLoggedUser);
     this.loggedUser$.pipe(takeUntil(this.destroy$)).subscribe(data => {
@@ -50,7 +49,6 @@ export class DisplayUserPageComponent implements OnInit, OnDestroy {
       this.userDirectManager$ = this.store.select(store => selectSpecificUserName(store, this.user?.directManagerID!))
       this.userDirectManager$.pipe(takeUntil(this.destroy$)).subscribe(data => {
         this.userDirectManager = data;
-        // console.log(this.userDirectManager)
       })
     }
   }

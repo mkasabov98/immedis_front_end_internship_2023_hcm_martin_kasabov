@@ -10,7 +10,7 @@ export class CustomMaterialSnackbarComponent {
 
   openSnackBar(message: string): void {
     this.snackBar.open(message, "Close", {
-      duration: 3000,
+      duration: 6000,
       horizontalPosition: 'center',
       verticalPosition: 'top'
     })

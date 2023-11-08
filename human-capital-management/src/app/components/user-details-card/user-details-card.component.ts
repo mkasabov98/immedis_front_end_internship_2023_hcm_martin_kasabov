@@ -29,9 +29,6 @@ export class UserDetailsCardComponent implements OnInit {
   }
 
   handleClick() {
-    console.log("click")
-    console.log(this.loggedUser)
-    console.log(this.user.id)
     this.router.navigate([`app/user/${this.user.id}`])
   }
 

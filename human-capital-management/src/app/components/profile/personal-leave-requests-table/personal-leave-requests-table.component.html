@@ -1,0 +1,71 @@
+<div class="personal-leave-requests-table-container" *ngIf="personalRequestsCollection.length > 0">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Leave Requests History</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <table mat-table [dataSource]="personalRequests" matSort class="mat-elevation-z8">
+
+                <ng-container matColumnDef="dateOfCreation">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="sort by dateOfCreation"> Created On
+                    </th>
+                    <td mat-cell *matCellDef="let leaveRequest">{{leaveRequest.dateOfCreation}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="startDate">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="sort by startDate"> Start Date
+                    </th>
+                    <td mat-cell *matCellDef="let leaveRequest">{{leaveRequest.startDate}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="endDate">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="sort by endDate"> End Date
+                    </th>
+                    <td mat-cell *matCellDef="let leaveRequest">{{leaveRequest.endDate}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="isAccepted">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="sort by isAccepted"> Status
+                    </th>
+                    <ng-container mat-cell *matCellDef="let leaveRequest">
+                        <td *ngIf="leaveRequest.isAccepted === true">Accepted</td>
+                        <td *ngIf="leaveRequest.isAccepted === false">Rejected</td>
+                        <td *ngIf="leaveRequest.isAccepted === null">Not Handled</td>
+                    </ng-container>
+                </ng-container>
+
+                <ng-container matColumnDef="message">
+                    <th mat-header-cell *matHeaderCellDef> Comment
+                    </th>
+                    <ng-container mat-cell *matCellDef="let leaveRequest">
+                        <td *ngIf="leaveRequest.message">{{leaveRequest.message}}</td>
+                        <td *ngIf="!leaveRequest.message">Not Handled</td>
+                    </ng-container>
+                </ng-container>
+
+                <ng-container matColumnDef="handledOn">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="sort by handledOn"> Handled On
+                    </th>
+                    <ng-container mat-cell *matCellDef="let leaveRequest">
+                        <td *ngIf="leaveRequest.handledOn">{{leaveRequest.handledOn}}</td>
+                        <td *ngIf="!leaveRequest.handledOn">Not Handled</td>
+                    </ng-container>
+                </ng-container>
+
+                <ng-container matColumnDef="handlerName">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="sort by handlerName"> Handled By
+                    </th>
+                    <ng-container mat-cell *matCellDef="let leaveRequest">
+                        <td *ngIf="leaveRequest.handlerName">{{leaveRequest.handlerName}}</td>
+                        <td *ngIf="!leaveRequest.handlerName">Not Handled</td>
+                    </ng-container>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[3, 6]" showFirstLastButtons>
+            </mat-paginator>
+        </mat-card-content>
+    </mat-card>
+</div>

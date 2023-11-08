@@ -7,31 +7,31 @@
             <table mat-table [dataSource]="notHandledLeaveRequests" matSort class="mat-elevation-z8">
 
                 <ng-container matColumnDef="userRequestingLeaveName">
-                    <th mat-header-cell *matHeaderCellDef sortActionDescription="sort by userRequestingLeaveName"> Name
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="sort by userRequestingLeaveName"> Name
                     </th>
                     <td mat-cell *matCellDef="let leaveRequest">{{leaveRequest.userRequestingLeaveName}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="startDate">
-                    <th mat-header-cell *matHeaderCellDef sortActionDescription="sort by startDate"> Start Date
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="sort by startDate"> Start Date
                     </th>
                     <td mat-cell *matCellDef="let leaveRequest">{{leaveRequest.startDate}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="endDate">
-                    <th mat-header-cell *matHeaderCellDef sortActionDescription="sort by endDate"> End Date
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="sort by endDate"> End Date
                     </th>
                     <td mat-cell *matCellDef="let leaveRequest">{{leaveRequest.endDate}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="dateOfCreation">
-                    <th mat-header-cell *matHeaderCellDef sortActionDescription="sort by dateOfCreation"> Created On
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="sort by dateOfCreation"> Created On
                     </th>
                     <td mat-cell *matCellDef="let leaveRequest">{{leaveRequest.dateOfCreation}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="isAccepted">
-                    <th mat-header-cell *matHeaderCellDef sortActionDescription="sort by isAccepted"> Status
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="sort by isAccepted"> Status
                     </th>
                     <td mat-cell *matCellDef="let leaveRequest">Not Handled</td>
                 </ng-container>

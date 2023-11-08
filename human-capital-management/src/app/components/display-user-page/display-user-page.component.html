@@ -35,7 +35,7 @@
                 <div class="display-user-button-inner-container">
                     <button mat-raised-button color="primary" (click)="openUserInfoDialog()">Make Changes</button>
                     <button mat-raised-button color="primary" (click)="openResetPasswordDialog()" *ngIf="loggedUser?.permission === 'admin'">Reset Password</button>
-                    <button mat-raised-button color="warn" (click)="openDeleteUserDialog()">Delete User</button>
+                    <button mat-raised-button color="warn" (click)="openDeleteUserDialog()" *ngIf="loggedUser!.id !== user!.id">Delete User</button>
                 </div>
             </mat-card-content>
         </div>
