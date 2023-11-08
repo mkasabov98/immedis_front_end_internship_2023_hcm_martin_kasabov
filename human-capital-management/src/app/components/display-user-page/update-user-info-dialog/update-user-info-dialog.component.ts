@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
-import { Observable, Subject, take } from 'rxjs';
+import { Subject, take } from 'rxjs';
 import { StoreInterface } from 'src/app/interfaces/store.interface';
 import { userInterface } from 'src/app/interfaces/user.interface';
 import { CustomMaterialSnackbarComponent } from 'src/app/services/custom-material-snackbar/custom-material-snackbar';

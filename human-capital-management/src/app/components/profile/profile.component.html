@@ -1,1 +1,4 @@
-<app-profile-section></app-profile-section>
+<div class="profile-page-container">
+    <app-profile-section [loggedUser]="loggedUser"></app-profile-section>
+    <app-leave-request-form *ngIf="loggedUser!.permission !== 'admin'" [loggedUserId]="loggedUserId"></app-leave-request-form>
+</div>

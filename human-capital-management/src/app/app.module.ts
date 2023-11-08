@@ -2,7 +2,7 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from "@angular/forms"
+import { FormsModule, ReactiveFormsModule } from "@angular/forms"
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +20,8 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule} from "@angular/material/paginator";
 import { MatSortModule } from '@angular/material/sort';
+import { MatDatepickerModule} from "@angular/material/datepicker"
+import { MatNativeDateModule} from '@angular/material/core';
 
 //components
 import { AppComponent } from './app.component';
@@ -51,6 +53,9 @@ import { YearValidatorDirective } from './customValidators/year-validator.direct
 import { RecentDateValidatorDirective } from './customValidators/recent-date-validator.directive';
 import { PasswordValidatorDirective } from './customValidators/password-validator.directive';
 import { DeleteUserDialogComponent } from './components/display-user-page/delete-user-dialog/delete-user-dialog.component';
+import { LeaveRequestFormComponent } from './components/profile/leave-request-form/leave-request-form.component';
+import { leaveRequestsCollectionReducer } from './store/leaveRequestsCollectionReducer/leaveRequestsCollection.reducer';
+import { LeaveRequestDetailsDialogComponent } from './components/dashboard/leave-request-details-dialog/leave-request-details-dialog.component';
 
 @NgModule({
   declarations: [
@@ -77,11 +82,14 @@ import { DeleteUserDialogComponent } from './components/display-user-page/delete
     ResetUserPasswordDialogComponent,
     UserCollectionTableComponent,
     DeleteUserDialogComponent,
+    LeaveRequestFormComponent,
+    LeaveRequestDetailsDialogComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     MatButtonModule,
     MatIconModule,
@@ -96,11 +104,14 @@ import { DeleteUserDialogComponent } from './components/display-user-page/delete
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     StoreModule.forRoot({
       loggedUser: loginReducer,
       userCollection: userCollectionReducer,
       countryDetails: countryDetailsReducer,
-      workforceDetails: workforceDetailsReducer
+      workforceDetails: workforceDetailsReducer,
+      leaveRequestsCollection: leaveRequestsCollectionReducer
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states

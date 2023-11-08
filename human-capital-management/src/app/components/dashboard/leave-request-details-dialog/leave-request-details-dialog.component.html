@@ -1,0 +1,36 @@
+<div class="leave-request-dialog-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Leave Request from {{data.leaveRequest.userRequestingLeaveName}}</mat-card-title>
+        </mat-card-header>
+        <div class="inner-container">
+            <mat-card-content>
+                <p><strong>Date Range:</strong>{{data.leaveRequest.startDate}} to {{data.leaveRequest.endDate}}</p>
+                <p><strong>Requested On:</strong>{{data.leaveRequest.dateOfCreation}}</p>
+                <p><strong>Leave Request Id:</strong>{{data.leaveRequest.leaveRequestId}}</p>
+            </mat-card-content>
+            <mat-card-content>
+                <form #handleRequestForm="ngForm">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Leave a comment</mat-label>
+                        <textarea ngModel matInput #message="ngModel" name="message" placeholder="Ex. Accepted because"
+                            required minlength="20" maxlength="200"></textarea>
+                        <mat-error *ngIf="message.invalid && (message.dirty || message.touched)">
+                            The comment should be 20 to 200 characters
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+            </mat-card-content>
+        </div>
+        <div class="button-container">
+            <mat-card-content>
+                <div>
+                    <button mat-raised-button color="primary" (click)="acceptLeaveRequest(handleRequestForm)"
+                        [disabled]="message.invalid">Accept</button>
+                    <button mat-raised-button color="warn" (click)="rejectLeaveRequest(handleRequestForm)"
+                        [disabled]="message.invalid">Reject</button>
+                </div>
+            </mat-card-content>
+        </div>
+    </mat-card>
+</div>
