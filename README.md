@@ -43,3 +43,5 @@ The idea of the application is to be given to a small or medium organization wit
 <p>Admin account: email: Admin@123456, password: Admin@123456 </p>
 <p>HR Manager account: email: HRmanager@123456 password: HRmanager@123456 </p>
 <p>employee: email: employee@abv.com password: employee@abv.com."</p>
+
+<p>The application is deployed here for quick test: https://hcm-mk.netlify.app/</p>
