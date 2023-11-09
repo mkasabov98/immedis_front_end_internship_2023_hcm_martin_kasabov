@@ -1,1 +1,1 @@
-# immedis_front_end_internship_2023_hcm_martin_kasabov
+# immedis_front_end_internship_2023_hcm_martin_kasabov![119014129-people-logo-group-teamwork-symbol-of-five-persons](https://github.com/mkasabov98/immedis_front_end_internship_2023_hcm_martin_kasabov/assets/128593836/2195cf68-1bc6-4bf1-995a-d645e5766595)
