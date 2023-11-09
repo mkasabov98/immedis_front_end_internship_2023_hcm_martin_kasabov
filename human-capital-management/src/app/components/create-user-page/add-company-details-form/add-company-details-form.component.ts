@@ -34,11 +34,12 @@ export class AddCompanyDetailsFormComponent implements OnInit, OnDestroy {
   constructor(
     private store: Store<StoreInterface>,
     private snackBar: CustomMaterialSnackbarComponent
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.allCountries$ = this.store.select(selectAllCountries);
     this.allCountries$.pipe(takeUntil(this.destroy$)).subscribe(data => {
+      this.allCountries = data;
     });
 
     this.allNationalities$ = this.store.select(selectAllNationalities);
@@ -72,7 +73,7 @@ export class AddCompanyDetailsFormComponent implements OnInit, OnDestroy {
     const existingCountry = this.allCountries.findIndex(country => country.toLowerCase() === countryInput.toLowerCase());
 
     if (existingCountry >= 0) {
-      form.controls['country'].setErrors({ 'duplicate': true })
+      form.controls['country'].setErrors({ 'duplicate': true });
     } else {
       this.store.dispatch(addCountry({ newCountry: countryInput }));
       form.resetForm();

@@ -1,4 +1,7 @@
 .leave-requests-table-container {
+    display: flex;
+    justify-content: center;
+
     mat-card {
         background: rgba(0, 0, 0, 0.3);
         display: flex;
