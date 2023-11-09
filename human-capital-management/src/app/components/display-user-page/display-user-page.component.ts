@@ -72,7 +72,10 @@ export class DisplayUserPageComponent implements OnInit, OnDestroy {
 
   openDeleteUserDialog() {
     this.dialog.open(DeleteUserDialogComponent, {
-      data: this.user?.id
+      data: {
+        userId: this.user?.id,
+        loggedUser: this.loggedUser
+      }
     })
   }
 }

@@ -47,8 +47,10 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit{
   }
 
   ngAfterViewInit(): void {
-    this.notHandledLeaveRequests.paginator = this.paginator;
-    this.notHandledLeaveRequests.sort = this.sort;
+    setInterval(() => {
+      this.notHandledLeaveRequests.paginator = this.paginator;
+      this.notHandledLeaveRequests.sort = this.sort;
+    },100)
   }
 
   ngOnDestroy(): void {
