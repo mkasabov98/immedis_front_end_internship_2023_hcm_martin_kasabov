@@ -24,22 +24,22 @@ Admins have the same functionality as an HR; however, they can reset the passwor
 
 The idea of the application is to be given to a small or medium organization with one preset Admin profile, and from there, the organization would be able to set everything for their needs (positions, departments, currencies for salaries, countries of residence for their employees, and nationalities) and create the profiles for all the employees of the company. The hierarchy supports employees and managers, which means that the managers do not have another manager or VP above them.
 
-Used technologies:
-Angular 16
-Angular Material
-NgRX
-RxJS
-SCSS
+<p>Used technologies:</p>
+<p>Angular 16</p>
+<p>Angular Material
+<p>NgRX</p>
+<p>RxJS</p>
+<p>SCSS</p>
 
-The application is preset with positions, departments, countries, nationalities, and currencies, as well as 15 users and 11 leave requests:
-positions: manager, senior, mid, junior
-departments: HR, IT, Accounting
-users:
-1 Admin
-4 HRs (one manager and three employees under that manager)
-10 employees (two managers and eight employees under those two managers)
+<p>The application is preset with positions, departments, countries, nationalities, and currencies, as well as 15 users and 11 leave requests:</p>
+<p>positions: manager, senior, mid, junior</p>
+<p>departments: HR, IT, Accounting</p>
+<p>users:</p>
+<p>1 Admin</p>
+<p>4 HRs (one manager and three employees under that manager)</p>
+<p>10 employees (two managers and eight employees under those two managers)</p>
 
-Credentials:
-Admin account: email: Admin@123456, password: Admin@123456 
-HR Manager account: email: HRmanager@123456 password: HRmanager@123456 
-employee: email: employee@abv.com password: employee@abv.com."
+<p>Credentials that can be used for testing the application:</p>
+<p>Admin account: email: Admin@123456, password: Admin@123456 </p>
+<p>HR Manager account: email: HRmanager@123456 password: HRmanager@123456 </p>
+<p>employee: email: employee@abv.com password: employee@abv.com."</p>
